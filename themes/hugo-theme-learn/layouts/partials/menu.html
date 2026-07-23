@@ -46,7 +46,7 @@
             <i class="fas fa-language fa-fw"></i>
             <div class="select-style">
               <select id="select-language" onchange="location = this.value;">
-                {{ $siteLanguages := .Site.Languages}} {{ $pageLang :=
+                {{ $siteLanguages := slice }}{{ range hugo.Sites }}{{ $siteLanguages = $siteLanguages | append .Language }}{{ end }} {{ $pageLang :=
                 .Page.Lang}} {{ range .Page.AllTranslations }} {{ $translation
                 := .}} {{ range $siteLanguages }} {{ if eq $translation.Lang
                 .Lang }} {{ $selected := false }} {{ if eq $pageLang .Lang}}
@@ -55,14 +55,14 @@
                   value="{{ $translation.Permalink }}"
                   selected
                 >
-                  {{ .LanguageName }}
+                  {{ .Label }}
                 </option>
                 {{ else }}
                 <option
                   id="{{ $translation.Language }}"
                   value="{{ $translation.Permalink }}"
                 >
-                  {{ .LanguageName }}
+                  {{ .Label }}
                 </option>
                 {{ end }} {{ end }} {{ end }} {{ end }}
               </select>

@@ -19,7 +19,9 @@
   }
 </style>
 <div class="ghContributors">
-  {{ $url := .Get 0 }} {{ range getJSON $url }}
+  {{ $url := .Get 0 }}
+  {{ $contributors := resources.GetRemote $url | transform.Unmarshal }}
+  {{ range $contributors }}
   <div>
     <img
       src="{{.avatar_url}}"
@@ -27,7 +29,6 @@
       width="32"
       height="32"
       style="
-        height: 32px;
         height: 32px;
         margin-bottom: 0.25em;
         vertical-align: middle;
