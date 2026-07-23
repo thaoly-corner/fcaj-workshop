@@ -16,7 +16,7 @@ pre: " <b> 1.1. </b> "
 | :---: | :--- | :---: | :---: | :--- |
 | **2** | - Get acquainted with FCAJ members. <br> - Read and take note of internship unit rules and regulations. | 06/01/2026 | 06/01/2026 | N/A |
 | **3** | - Learn about cloud computing, AWS and its services. | 06/02/2026 | 06/02/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
-| **4** | - Create AWS Free Tier account. <br> - **Practice:** MFA setup, IAM (Admin group & user), Account authentication. | 06/03/2026 | 06/03/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000001.awsstudygroup.com/) |
+| **4** | - Create AWS account. <br> - **Practice:** MFA setup, IAM (Admin group & user), Account authentication. | 06/03/2026 | 06/03/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000001.awsstudygroup.com/) |
 | **5** | - Learn cost optimization and support procedures. <br> - Practice creating Usage, RI, and Savings Plans budgets. | 06/04/2026 | 06/04/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000007.awsstudygroup.com/)|
 | **6** | - Explore AWS support packages. <br> - Practice identifying, creating, and managing support requests. | 06/05/2026 | 06/05/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
 
