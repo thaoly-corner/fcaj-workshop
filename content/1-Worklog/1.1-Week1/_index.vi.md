@@ -1,59 +1,33 @@
 ---
-title: "Worklog Tuần 1"
-date: 2024-01-01
+title: "Báo cáo Công việc - Tuần 1"
+date: 2026-06-01
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 1:
+* Làm quen với các khái niệm cốt lõi về Điện toán đám mây và Hạ tầng toàn cầu của AWS.
+* Thiết lập tài khoản AWS an toàn bằng xác thực đa yếu tố (MFA) và cấu hình quản trị người dùng (IAM) cho tài khoản admin.
+* Tìm hiểu các kỹ thuật tối ưu hóa chi phí, cấu hình AWS Budgets và học cách tương tác với hệ thống AWS Support.
 
-### Mục tiêu tuần 1:
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày kết thúc | Nguồn tài liệu |
+| :---: | :--- | :---: | :---: | :--- |
+| 2| - Làm quen với các thành viên FCAJ. <br> - Đọc và ghi chú quy định thực tập. | 06/01/2026 | 06/01/2026 | N/A |
+| 3 | - Tìm hiểu về điện toán đám mây, AWS và các dịch vụ của AWS. | 06/02/2026 | 06/02/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
+| 4 | - Tạo tài khoản AWS. <br> - **Thực hành:** Thiết lập MFA, cấu hình IAM (nhóm & người dùng quản trị), xác thực tài khoản. | 06/03/2026 | 06/03/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000001.awsstudygroup.com/) |
+| 5 | - Học về tối ưu hóa chi phí và quy trình hỗ trợ. <br> - Thực hành tạo ngân sách Usage, RI và Savings Plans. | 06/04/2026 | 06/04/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000007.awsstudygroup.com/) |
+| 6 | - Khám phá các gói hỗ trợ AWS. <br> - Thực hành xác định, tạo và quản lý các yêu cầu hỗ trợ. | 06/05/2026 | 06/05/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Thành tựu Tuần 1:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Nắm vững các khái niệm cơ bản về điện toán đám mây và cách vận hành của AWS.
 
+* Khởi tạo thành công tài khoản AWS. Bảo mật tài khoản bằng cách thiết lập xác thực đa yếu tố (MFA) và cấu hình nhóm quản trị, admin để tăng cường bảo mật.
 
-### Kết quả đạt được tuần 1:
+* Giám sát và tối ưu hóa chi phí trên AWS. Thực hành thành công việc tạo các loại ngân sách khác nhau như ngân sách sử dụng (Usage), ngân sách cho thực thể dự phòng (RI) và ngân sách cho Savings Plans.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tìm hiểu cách sử dụng hệ thống AWS Support, hiểu các gói hỗ trợ khác nhau và cách thức tạo/quản lý các yêu cầu hỗ trợ khi gặp vấn đề.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Làm quen với AWS Management Console, giúp điều hướng, truy cập và quản lý các tài nguyên đám mây.
