@@ -1,125 +1,51 @@
 ---
-title: "Event 2"
-date: 2024-01-01
+title: "Cloud Architect Game Show"
+date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Report: "Cloud Architect Game Show"
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Event Purpose & Observational Experience
 
-### Mục Đích Của Sự Kiện
+The **Cloud Architect** event was organized as a head-to-head game show format competing among 8 teams. Although I did not directly compete, observing the turns of answers and analyzing the solutions through each set of questions provided me with many practical perspectives on applying AWS cloud knowledge from basic to advanced levels.
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+---
 
-### Danh Sách Diễn Giả
+### Reinforcing Knowledge Through AWS-Tiered Question Sets
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+The competition questions were designed closely following the standard AWS certification framework, helping me reinforce my knowledge across various proficiency tiers:
 
-### Nội Dung Nổi Bật
+#### 1. Foundational Tier (Cloud Foundations)
+* **Core Concepts**: Re-solidified the *Shared Responsibility Model*, clearly demarcating AWS's infrastructure security responsibilities versus user data/configuration security.
+* **Core Services**: Differentiated the scopes of compute services (EC2, Lambda) and storage services (S3, EBS, EFS).
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### 2. Associate Tier (Architecting Solutions)
+* **High Availability**: Practiced fault-tolerant system design thinking when deploying applications across multiple Availability Zones (Multi-AZ) combined with Auto Scaling and Load Balancers.
+* **Decoupling**: Understood the role of SQS and SNS in reducing tight coupling between services, ensuring stable system operation during sudden traffic spikes.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### 3. Professional & Specialty Tier (Complex Scenarios)
+* **Risk Management & Disaster Recovery**: Through various scenarios, the organizers skillfully integrated knowledge on risk management and disaster recovery. 
+* **Cost Optimization & Security**: How to combine pricing options (Savings Plans, Spot Instances) with the principle of least privilege using IAM.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+---
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### Key Takeaways & New Insights
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+* **Re-evaluating Common Misconceptions**: Through the organizers' explanations, I gained a clearer understanding that moving a system to the Cloud does not automatically mean 100% security; it heavily depends on how engineers configure permissions (IAM) and storage settings.
+* **Trade-off Thinking**: Cloud architecture design always demands a balance among three factors: Cost, Reliability, and Performance. There is no one-size-fits-all model for every problem.
 
-#### Domain-Driven Design (DDD)
+---
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+### Application to Personal Development Orientation
 
-#### Event-Driven Architecture
+* **Systematizing the AWS Learning Roadmap**: Set a goal to conquer certifications following a structured path: *Cloud Practitioner* $\rightarrow$ *Solutions Architect Associate* $\rightarrow$ advanced certifications (*DevOps / Data Analytics*).
+* **Practicing Real-World Problem-Solving Thinking**: Instead of just learning isolated service theories, focus on practicing end-to-end system design based on real-world use cases.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+#### Some Photos From Attending the Event
+*(Since I forgot to take photos at the hall during the event, below is a screenshot serving as proof of successful attendance / check-in on the Portal instead)*
 
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
-
-### Những Gì Học Được
-
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+![Portal check-in proof image](images/4-Event/portal.png)
+Overall, this was not merely an academic presentation but an extremely engaging "learn-through-play" experience! The Game Show format designed by the organizers was exceptionally clever—ranging from the lively competitive atmosphere to surprising tactical "plot twists"—which not only made complex Cloud concepts intuitive and easy to digest but also created an energetic intellectual playground. The event not only equipped me with practical architectural perspectives but also instilled further confidence to step steadily on my roadmap of conquering AWS certifications in the future.

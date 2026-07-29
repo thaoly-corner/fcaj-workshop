@@ -15,7 +15,7 @@ Phần này tóm tắt các công việc và định hướng kỹ thuật **d�
 
 ### 2. Đặt vấn đề & Giải pháp
 #### Thách thức thực tế
-Việc cập nhật thông tin từ nhiều nguồn tin tức khác nhau hiện tốn khá nhiều thời gian do phải tìm kiếm và đọc thủ công. Thị trường đang thiếu một nền tảng tập trung cho phép hỏi đáp trực tiếp về sự kiện mới và cung cấp nguồn trích dẫn xác thực. Trong khi đó, các công cụ AI phổ biến như ChatGPT lại chưa cập nhật kịp thời các tin tức thời gian thực.
+Việc cập nhật thông tin từ nhiều nguồn tin tức khác nhau hiện tốn khá nhiều thời gian do phải tìm kiếm và đọc thủ công. Thị trường đang thiếu một nền tảng tập trung cho phép hỏi đáp trực tiếp về sự kiện mới và cung cấp nguồn trích dẫn xác thực.
 
 #### Giải pháp đề xuất
 News RAG Pipeline tự động hóa toàn bộ quy trình xử lý thông qua 4 bước: (1) Thu thập bài viết từ sitemap báo chí bằng Scrapy chạy trên ECS Fargate, (2) Chuyển dữ liệu qua SQS để lưu tạm vào Aurora PostgreSQL, (3) Sử dụng Lambda ETL để làm sạch mã HTML, cấu trúc hóa dữ liệu theo Star Schema và tạo vector embedding với Amazon Bedrock Titan Embed v2, (4) Khởi chạy Lambda RAG API để tiếp nhận câu hỏi tự nhiên, thực hiện tìm kiếm tương đồng vector trên pgvector (chỉ mục HNSW) và tổng hợp câu trả lời bằng LLM. Toàn bộ luồng công việc được điều phối tự động bởi EventBridge Scheduler.
