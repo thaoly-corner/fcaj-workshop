@@ -6,46 +6,46 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Report: "Cloud Architect Game Show"
+# Bài Thu Hoạch: "Cloud Architect Game Show"
 
-### Event Purpose & Observational Experience
+### Mục Đích Sự Kiện & Trải Nghiệm Quan Sát
 
-The **Cloud Architect** event was organized as a head-to-head game show format competing among 8 teams. Although I did not directly compete, observing the turns of answers and analyzing the solutions through each set of questions provided me with many practical perspectives on applying AWS cloud knowledge from basic to advanced levels.
-
----
-
-### Reinforcing Knowledge Through AWS-Tiered Question Sets
-
-The competition questions were designed closely following the standard AWS certification framework, helping me reinforce my knowledge across various proficiency tiers:
-
-#### 1. Foundational Tier (Cloud Foundations)
-* **Core Concepts**: Re-solidified the *Shared Responsibility Model*, clearly demarcating AWS's infrastructure security responsibilities versus user data/configuration security.
-* **Core Services**: Differentiated the scopes of compute services (EC2, Lambda) and storage services (S3, EBS, EFS).
-
-#### 2. Associate Tier (Architecting Solutions)
-* **High Availability**: Practiced fault-tolerant system design thinking when deploying applications across multiple Availability Zones (Multi-AZ) combined with Auto Scaling and Load Balancers.
-* **Decoupling**: Understood the role of SQS and SNS in reducing tight coupling between services, ensuring stable system operation during sudden traffic spikes.
-
-#### 3. Professional & Specialty Tier (Complex Scenarios)
-* **Risk Management & Disaster Recovery**: Through various scenarios, the organizers skillfully integrated knowledge on risk management and disaster recovery. 
-* **Cost Optimization & Security**: How to combine pricing options (Savings Plans, Spot Instances) with the principle of least privilege using IAM.
+Sự kiện **Cloud Architect** được tổ chức dưới hình thức Game Show đối kháng trực tiếp giữa 8 đội thi. Dù không trực tiếp thi đấu, việc theo dõi các lượt trả lời và phân tích đáp án qua từng bộ đề đã mang lại cho em nhiều góc nhìn thực tế về cách ứng dụng kiến thức đám mây AWS từ cơ bản đến nâng cao.
 
 ---
 
-### Key Takeaways & New Insights
+### Củng Cố Kiến Thức Qua Các Bộ Câu Hỏi Cấp Độ AWS
 
-* **Re-evaluating Common Misconceptions**: Through the organizers' explanations, I gained a clearer understanding that moving a system to the Cloud does not automatically mean 100% security; it heavily depends on how engineers configure permissions (IAM) and storage settings.
-* **Trade-off Thinking**: Cloud architecture design always demands a balance among three factors: Cost, Reliability, and Performance. There is no one-size-fits-all model for every problem.
+Các câu hỏi trong cuộc thi được thiết kế bám sát theo bộ khung chứng chỉ chuẩn của AWS, giúp em củng cố lại kiến thức theo từng mức độ:
+
+#### 1. Cấp Độ Foundational (Nền Tảng Cloud)
+* **Khái niệm cốt lõi**: Củng cố lại Mô hình trách nhiệm chung (*Shared Responsibility Model*), phân định rõ nhiệm vụ bảo mật hạ tầng của AWS và bảo mật dữ liệu/cấu hình của người dùng.
+* **Dịch vụ cơ bản**: Phân biệt phạm vi sử dụng của các dịch vụ tính toán (EC2, Lambda) và lưu trữ (S3, EBS, EFS).
+
+#### 2. Cấp Độ Associate (Thiết Kế Kiến Trúc)
+* **Tính sẵn sàng cao (High Availability)**: Luyện tập tư duy thiết kế hệ thống chịu lỗi khi triển khai ứng dụng trên nhiều vùng khả dụng (Multi-AZ) kết hợp Auto Scaling và Load Balancer.
+* **Tách rời hệ thống (Decoupling)**: Hiểu rõ vai trò của SQS và SNS trong việc giảm độ gắn kết giữa các dịch vụ, giúp hệ thống vận hành ổn định khi lượng truy cập tăng đột biến.
+
+#### 3. Cấp Độ Professional & Specialty (Tình Huống Phức Tạp)
+* **Quản trị rủi ro & Khôi phục sự cố**: Thông qua các kịch bản, BTC khéo léo lồng ghép các kiến thức về Quản trị rủi ro & Khôi phục sự cố. 
+* **Tối ưu chi phí & Bảo mật**: Cách kết hợp các hình thức trả phí (Savings Plans, Spot Instances) và cơ chế phân quyền tối thiểu (Least Privilege) với IAM.
 
 ---
 
-### Application to Personal Development Orientation
+### Những Điểm Rút Ra & Nhận Thức Mới
 
-* **Systematizing the AWS Learning Roadmap**: Set a goal to conquer certifications following a structured path: *Cloud Practitioner* $\rightarrow$ *Solutions Architect Associate* $\rightarrow$ advanced certifications (*DevOps / Data Analytics*).
-* **Practicing Real-World Problem-Solving Thinking**: Instead of just learning isolated service theories, focus on practicing end-to-end system design based on real-world use cases.
+* **Nhìn nhận lại các khái niệm hay nhầm lẫn**: Qua phần giải đáp của BTC, em hiểu rõ hơn rằng việc đưa hệ thống lên Cloud không đồng nghĩa với việc tự động bảo mật 100%, mà phụ thuộc rất lớn vào cách cấu hình phân quyền (IAM) và lưu trữ của kỹ sư.
+* **Tư duy Đánh đổi (Trade-off)**: Thiết kế kiến trúc Cloud luôn đòi hỏi sự cân bằng giữa 3 yếu tố: Chi phí (Cost), Độ tin cậy (Reliability) và Hiệu năng (Performance). Không có một mô hình chuẩn cho mọi bài toán.
 
-#### Some Photos From Attending the Event
-*(Since I forgot to take photos at the hall during the event, below is a screenshot serving as proof of successful attendance / check-in on the Portal instead)*
+---
 
-![Portal check-in proof image](images/4-Event/portal.png)
-Overall, this was not merely an academic presentation but an extremely engaging "learn-through-play" experience! The Game Show format designed by the organizers was exceptionally clever—ranging from the lively competitive atmosphere to surprising tactical "plot twists"—which not only made complex Cloud concepts intuitive and easy to digest but also created an energetic intellectual playground. The event not only equipped me with practical architectural perspectives but also instilled further confidence to step steadily on my roadmap of conquering AWS certifications in the future.
+### Ứng Dụng Vào Định Hướng Bản Thân
+
+* **Hệ thống hóa lộ trình học AWS**: Đặt mục tiêu chinh phục các chứng chỉ theo đúng lộ trình bài bản: *Cloud Practitioner* $\rightarrow$ *Solutions Architect Associate* $\rightarrow$ các chứng chỉ chuyên sâu (*DevOps / Data Analytics*).
+* **Rèn luyện tư duy bài toán thực tế**: Thay vì chỉ học lý thuyết dịch vụ đơn lẻ, tập trung luyện tập thiết kế hệ thống end-to-end dựa trên các bài toán tình huống (Use Cases).
+
+#### Một số hình ảnh khi tham gia sự kiện
+*(Do thời điểm tham gia sự kiện em quên chụp ảnh tại hội trường, dưới đây là ảnh chụp màn hình minh chứng điểm danh / check-in thành công trên Portal để thay thế)*
+
+![Ảnh minh chứng check-in trên Portal](images/4-Event/portal.png)
+Nhìn chung, đây không đơn thuần là một buổi báo cáo học thuật mà là một trải nghiệm "vừa học vừa chơi" cực kỳ cuốn hút! Format Game Show được BTC thiết kế vô cùng khéo léo—từ không khí thi đấu sôi nổi đến những pha "bẻ lái" chiến thuật đầy bất ngờ—không chỉ giúp các khái niệm Cloud phức tạp trở nên vô cùng trực quan và dễ thấm, mà còn tạo ra một sân chơi tri thức đầy năng lượng. Sự kiện không chỉ trang bị cho em những góc nhìn kiến trúc thực tế.
