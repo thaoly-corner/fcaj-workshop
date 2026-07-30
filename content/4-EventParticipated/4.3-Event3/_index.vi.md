@@ -33,7 +33,7 @@ Dự án tập trung vào "nỗi đau" của các doanh nghiệp khi phải phâ
 * **Triết lý lựa chọn đề tài:** Hướng đến ứng dụng và nghiệp vụ. Cần hiểu rõ thị trường: "Phần mềm bạn tạo ra giải quyết vấn đề gì?", "Người dùng mục tiêu là ai?". Từ đó lựa chọn đề tài và cách tiếp cận phù hợp.
 * **Kiến trúc Serverless & Sub-agents:** Sử dụng AWS Lambda và Agent Core để điều phối công việc. Các *Sub-agents* đảm nhận nhiệm vụ chuyên biệt: cào dữ liệu, lọc thông tin nhiễu, lưu trữ cấu trúc vào S3/DynamoDB.
 * **Tối ưu chi phí:** Sử dụng các dịch vụ của AWS để thay thế TinyFish và Ampify nhằm tối ưu chi phí.
-![Hình ảnh mô hình kiến trúc của dự án AI-Driven Business Strategy Analyzer](images/4-Event/ss.png)
+{{< event-image src="images/4-Event/ss.png" alt="Hình ảnh mô hình kiến trúc của dự án AI-Driven Business Strategy Analyzer" >}}
 
 #### Solution Architect Professional Native App - Plan V
 
@@ -48,20 +48,20 @@ Dự án tập trung vào "nỗi đau" của các doanh nghiệp khi phải phâ
 * Yêu cầu được chuyển đến các Sub-agents backend để phân tích, đối chiếu với policy doanh nghiệp.
 * Hệ thống tiến hành vẽ sơ đồ trên Draw.io, tổng hợp báo cáo real-time, xuất bảng giá và tạo mã IaC (Terraform).
 * Lưu trữ cơ sở dữ liệu liên quan và trả kết quả hoàn chỉnh về cho người dùng.
-![Hình ảnh mô hình kiến trúc của dự án Solution Architect Professional Native App](images/4-Event/PlanV.png)
+{{< event-image src="images/4-Event/PlanV.png" alt="Hình ảnh mô hình kiến trúc của dự án Solution Architect Professional Native App" >}}
 #### Real-Time Crowd Flow Monitoring System - 3KA
 Hệ thống giải quyết bài toán ùn tắc tại các khu vực đông người (sân bay, siêu thị), giúp giảm thiểu rủi ro an ninh và sự bực bội của khách hàng.
 * **Xử lý thời gian thực & AI Agent:** Ứng dụng mô hình **YOLO** nhận diện và theo dõi luồng di chuyển qua video livestream (kết hợp WebSocket và AWS Fargate). AI Agent hoạt động tự chủ để giám sát và gửi thông báo trực tiếp cho nhân viên vận hành.
 * **Phân tích luồng (Zone-wise tracking):** Định nghĩa linh hoạt các vùng giám sát. Hệ thống tự động đếm số lượng người, và hiển thị cảnh báo phân cấp màu sắc trực quan trên Dashboard.
 * **Bài học kỹ thuật:** Dù gặp một số rào cản về độ trễ mạng (networking limitations) khi demo, dự án đã chứng minh thành công tính khả thi của việc tích hợp Deep AI với dịch vụ Cloud để tự động hóa nhưng vẫn giữ quyền quyết định cho con người.
-![Hình ảnh mô hình kiến trúc của dự án Real-Time Crowd Flow Monitoring System](images/4-Event/3KA.png)
+{{< event-image src="images/4-Event/3KA.png" alt="Hình ảnh mô hình kiến trúc của dự án Real-Time Crowd Flow Monitoring System" >}}
 
 #### Adaptive AML Workflow Engine - Six Pillars Team
 Dự án giải quyết bài toán chống rửa tiền (AML). Thực tế, 90–95% các cảnh báo giao dịch hiện nay là cảnh báo giả (false-positive), khiến các nhà phân tích mất quá nhiều thời gian và dễ bị burnout.
 * **Tự động hóa quy trình phân loại (Triage):** Các AI Agents đảm nhận việc tra cứu KYC, phân tích giao dịch và tự động tổng hợp bộ hồ sơ bằng chứng.
 * **Hiệu suất ấn tượng:** Rút ngắn quá trình xử lý đa bước từ **~3 giờ/ca** xuống chỉ còn một báo cáo tóm tắt gọn gàng để chuyên viên duyệt bước cuối.
 * **Minh bạch hóa (Auditability):** Điểm ăn tiền của dự án nằm ở hệ thống ghi log chi tiết, cho phép truy xuất toàn bộ nguồn gốc và lập luận của AI, đáp ứng yêu cầu khắt khe về tính minh bạch của các định chế tài chính.
-![Hình ảnh mô hình kiến trúc của dự án Adaptive AML Workflow Engine](images/4-Event/aml.png)
+{{< event-image src="images/4-Event/aml.png" alt="Hình ảnh mô hình kiến trúc của dự án Adaptive AML Workflow Engine" >}}
 ---
 
 ### 3. Bài Học Kinh Nghiệm & Tư Duy Cốt Lõi Qua Hackathon
@@ -72,7 +72,8 @@ Sự kiện kết thúc với những đúc kết quý báu từ các đội thi
 * **Giá trị của sự lặp lại (Iterative Feedback):** Những lời nhận xét đa chiều từ ban giám khảo—bao gồm cả góc nhìn kỹ thuật, nghiệp vụ kinh doanh và trải nghiệm người dùng (UX)—chính là chất xúc tác để mài giũa sản phẩm sắc bén hơn.
 
 ---
-#### Một số hình ảnh khi tham gia sự kiện
-![Hình ảnh nhóm tham dự sự kiện](images/4-Event/team.png)
+#### Hình ảnh tham gia sự kiện
+{{< event-image src="images/4-Event/team.png" alt="Hình nhóm tham gia sự kiện" >}}
+
 > **Tổng kết lại**,  những chia sẻ trong sự kiện không chỉ mang đến một không gian thi đấu công nghệ bùng nổ, đầy kịch tính và dạt dào cảm hứng sáng tạo, mà còn tiếp thêm những góc nhìn thực chiến vô cùng sắc bén về nghệ thuật đóng gói một sản phẩm AI hoàn chỉnh. Qua đó, em không chỉ củng cố vững chắc nền tảng về kiến trúc Serverless, Sub-agents và nghệ thuật tối ưu hóa chi phí đám mây, mà còn xác định được rõ ràng hơn lộ trình nâng cao năng lực bản thân. Đây chắc chắn là một bệ phóng tuyệt vời, giúp em sẵn sàng đối mặt và làm chủ những làn sóng công nghệ mới đang thay đổi từng ngày.
 ---

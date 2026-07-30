@@ -15,10 +15,10 @@ pre: " <b> 1.1. </b> "
 | Thứ | Công việc | Ngày bắt đầu | Ngày kết thúc | Nguồn tài liệu |
 | :---: | :--- | :---: | :---: | :--- |
 | 2| - Làm quen với các thành viên FCAJ. <br> - Đọc và ghi chú quy định thực tập. | 06/01/2026 | 06/01/2026 | N/A |
-| 3 | - Tìm hiểu về điện toán đám mây, AWS và các dịch vụ của AWS. | 06/02/2026 | 06/02/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
-| 4 | - Tạo tài khoản AWS. <br> - **Thực hành:** Thiết lập MFA, cấu hình IAM (nhóm & người dùng quản trị), xác thực tài khoản. | 06/03/2026 | 06/03/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000001.awsstudygroup.com/) |
-| 5 | - Học về tối ưu hóa chi phí và quy trình hỗ trợ. <br> - Thực hành tạo ngân sách Usage, RI và Savings Plans. | 06/04/2026 | 06/04/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000007.awsstudygroup.com/) |
-| 6 | - Khám phá các gói hỗ trợ AWS. <br> - Thực hành xác định, tạo và quản lý các yêu cầu hỗ trợ. | 06/05/2026 | 06/05/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
+| 3 | - Tìm hiểu về điện toán đám mây, AWS và các dịch vụ của AWS. | 02/06/2026 | 02/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
+| 4 | - Tạo tài khoản AWS. <br> - **Thực hành:** Thiết lập MFA, cấu hình IAM (nhóm & người dùng quản trị), xác thực tài khoản. | 03/06/2026 | 03/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000001.awsstudygroup.com/) |
+| 5 | - Học về tối ưu hóa chi phí và quy trình hỗ trợ. <br> - Thực hành tạo ngân sách Usage, RI và Savings Plans. | 04/06/2026 | 04/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i)<br>[AWS Study Guide](https://000007.awsstudygroup.com/) |
+| 6 | - Khám phá các gói hỗ trợ AWS. <br> - Thực hành xác định, tạo và quản lý các yêu cầu hỗ trợ. | 05/06/2026 | 05/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
 
 ### Thành tựu Tuần 1:
 

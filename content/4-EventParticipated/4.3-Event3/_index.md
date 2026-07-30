@@ -1,7 +1,7 @@
 ---
 title: "Agentic AI Build Week Hackathon"
 date: 2026-07-25
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 4.3. </b> "
 ---
@@ -33,7 +33,7 @@ The project focuses on the "pain point" of businesses when analyzing competitor 
 * **Topic Selection Philosophy:** Focused on application and business operations. Understanding the market clearly: "What problem does your software solve?", "Who is the target user?". From there, choose the appropriate topic and approach.
 * **Serverless Architecture & Sub-agents:** Utilizes AWS Lambda and Agent Core to coordinate tasks. *Sub-agents* handle specialized tasks: web scraping, noise filtering, and structured storage in S3/DynamoDB.
 * **Cost Optimization:** Uses AWS services to replace TinyFish and Amplify to optimize costs.
-![Architecture model image of the AI-Driven Business Strategy Analyzer project](images/4-Event/ss.png)
+{{< event-image src="images/4-Event/ss.png" alt="Architecture model image of the AI-Driven Business Strategy Analyzer project" >}}
 
 #### Solution Architect Professional Native App - Plan V
 
@@ -48,21 +48,21 @@ The project focuses on the "pain point" of businesses when analyzing competitor 
 * Requests are forwarded to backend Sub-agents for analysis and cross-referencing with enterprise policies.
 * The system proceeds to draw diagrams on Draw.io, aggregate real-time reports, generate pricing tables, and create IaC code (Terraform).
 * Stores related databases and returns the complete result to the user.
-![Architecture model image of the Solution Architect Professional Native App project](images/4-Event/PlanV.png)
+{{< event-image src="images/4-Event/PlanV.png" alt="Architecture model image of the Solution Architect Professional Native App project" >}}
 
 #### Real-Time Crowd Flow Monitoring System - 3KA
 The system solves congestion problems in crowded areas (airports, supermarkets), helping minimize security risks and customer frustration.
 * **Real-time Processing & AI Agent:** Utilizes the **YOLO** model to detect and track movement flows via video livestreams (combining WebSocket and AWS Fargate). AI Agents operate autonomously to monitor and send notifications directly to operational staff.
 * **Zone-wise Tracking:** Flexibly defines monitoring zones. The system automatically counts people and displays intuitive color-coded warning levels on the Dashboard.
 * **Technical Lessons:** Despite encountering some networking limitations during the demo, the project successfully proved the feasibility of integrating Deep AI with Cloud services for automation while retaining human decision-making power.
-![Architecture model image of the Real-Time Crowd Flow Monitoring System project](images/4-Event/3KA.png)
+{{< event-image src="images/4-Event/3KA.png" alt="Architecture model image of the Real-Time Crowd Flow Monitoring System project" >}}
 
 #### Adaptive AML Workflow Engine - Six Pillars Team
 The project tackles Anti-Money Laundering (AML). In reality, 90–95% of current transaction alerts are false-positives, causing analysts to waste excessive time and easily burn out.
 * **Automated Triage Process:** AI Agents handle KYC lookups, transaction analysis, and automatically aggregate evidence dossiers.
 * **Impressive Performance:** Shortens the multi-step processing time from **~3 hours/case** down to a neat summary report for specialists to approve at the final step.
 * **Auditability:** The project's standout feature lies in its detailed logging system, allowing full traceability of AI origins and reasoning, meeting the strict transparency requirements of financial institutions.
-![Architecture model image of the Adaptive AML Workflow Engine project](images/4-Event/aml.png)
+{{< event-image src="images/4-Event/aml.png" alt="Architecture model image of the Adaptive AML Workflow Engine project" >}}
 
 ---
 
@@ -74,7 +74,7 @@ The event concluded with valuable takeaways from the teams:
 * **Value of Iterative Feedback:** Multi-dimensional feedback from the jury—including technical, business, and user experience (UX) perspectives—is the catalyst to sharpen the product.
 
 ---
-#### Some photos from attending the event
-![Group photo attending the event](images/4-Event/team.png)
+#### Some Photos From Attending the Event
+{{< event-image src="images/4-Event/team.png" alt="The picture of my team while attending the event" >}}
 > **In summary**, the sharing sessions during the event not only provided an explosive, thrilling technology playground brimming with creative inspiration, but also offered sharp, practical perspectives on the art of packaging a complete AI product. Through this, I not only firmly consolidated my foundation in Serverless architecture, Sub-agents, and cloud cost optimization art, but also clearly defined a roadmap to elevate my own capabilities. This is undoubtedly a fantastic launching pad, helping me ready to face and master new technology waves changing day by day.
 ---

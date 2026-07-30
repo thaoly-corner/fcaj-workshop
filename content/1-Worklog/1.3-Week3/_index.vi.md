@@ -1,59 +1,33 @@
 ---
-title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+title: "Báo cáo Công việc - Tuần 3"
+date: 2026-06-15
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 3:
+* Phối hợp đồng bộ với luồng xử lý dữ liệu (ETL) của nhóm: Hoàn thiện phần Truy xuất và Sinh văn bản (Retrieval - Augmented Generation).
+* Xây dựng kiến trúc truy xuất 2 giai đoạn (two-stage retrieval) kết hợp Vector Search và Cross-Encoder Reranking để tối ưu độ chính xác của ngữ cảnh.
+* Tích hợp LLM (Google Gemini) để hoàn thiện luồng hỏi đáp dựa trên ngữ cảnh.
+* Tìm hiểu hạ tầng đám mây AWS (Lambda, Bedrock) vào cuối tuần.
 
-### Mục tiêu tuần 3:
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày kết thúc | Nguồn tài liệu |
+| :---: | :--- | :---: | :---: | :--- |
+| 2 | - Đăng ký API Key và viết script test gọi Google Gemini API. | 15/06/2026 | 15/06/2026 | [Gemini API Docs](https://ai.google.dev/docs) |
+| 3 | - Dùng `sentence-transformers` load model `BAAI/bge-m3` để nhúng (embed) câu hỏi truy vấn (đồng bộ không gian vector với nhóm). | 16/06/2026 | 16/06/2026 | [HuggingFace - BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) |
+| 4 | - Cài `qdrant-client`, kết nối cluster Qdrant. <br> - Chốt cấu trúc Payload (Metadata) với team ETL. | 17/06/2026 | 17/06/2026 | [Qdrant Python Client](https://qdrant.tech/documentation/interfaces/python/) |
+| 5 | - Xây dựng Retrieve Pipeline 2 giai đoạn: <br> 1. Truy vấn Qdrant lấy Top-N (Retrieve). <br> 2. Dùng mô hình Cross-Encoder (vd: `BAAI/bge-reranker-base`) để chấm điểm và xếp hạng lại (Rerank) ra Top-K. | 18/06/2026 | 18/06/2026 | [Advanced RAG - Reranking](https://www.pinecone.io/learn/advanced-rag-techniques/) |
+| 6 | - Kỹ thuật thiết kế prompt (Prompt Engineering): Nhồi Top-K ngữ cảnh đã rerank vào Gemini để sinh câu trả lời tiếng Việt chính xác. | 19/06/2026 | 19/06/2026 | [Prompt Engineering Guide](https://www.promptingguide.ai/) |
+| 7 | - **Test End-to-End với team:** Đợi luồng ETL đẩy data xong -> Chạy query -> Rerank -> LLM sinh câu trả lời. | 20/06/2026 | 20/06/2026 | N/A |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Thành tựu Tuần 3:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Tối ưu hóa chất lượng ngữ cảnh bằng việc áp dụng thành công kiến trúc truy xuất 2 giai đoạn (two-stage retrieval), sử dụng Cross-Encoder để tinh chỉnh và đánh giá lại độ phù hợp của kết quả tìm kiếm thô từ Qdrant.
 
+* Khớp nối thành công quy trình làm việc nhóm, tách biệt rõ ràng luồng đẩy dữ liệu (Data Ingestion) và luồng truy vấn (Data Consumption).
 
-### Kết quả đạt được tuần 3:
+* Đồng bộ hóa không gian vector bằng cách sử dụng chung mô hình `BAAI/bge-m3` với luồng ETL.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thiện công cụ tìm kiếm ngữ nghĩa và tích hợp mượt mà với mô hình sinh ngôn ngữ tự nhiên (Google Gemini), pass toàn bộ kịch bản test End-to-End trên local.

@@ -103,5 +103,5 @@ Tham gia sự kiện **“First Cloud AI Journey Meetup”** mang lại cái nh�
 #### Một số hình ảnh khi tham gia sự kiện
 *(Do thời điểm tham gia sự kiện em quên chụp ảnh tại hội trường, dưới đây là ảnh chụp màn hình minh chứng điểm danh / check-in thành công trên Portal để thay thế)*
 
-![Ảnh minh chứng check-in trên Portal](images/4-Event/portal.png)
+{{< event-image src="images/4-Event/portal.png" alt="Ảnh minh chứng check-in trên Portal" >}}
 > Tổng thể, sự kiện trang bị những góc nhìn kỹ thuật đắt giá, giúp em có định hướng rõ ràng hơn cho con đường phát triển sự nghiệp sắp tới.

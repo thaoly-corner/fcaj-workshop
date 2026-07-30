@@ -1,57 +1,30 @@
 ---
-title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog - Week 4"
+date: 2026-06-22
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
+* Begin migrating the RAG architecture from local to the AWS Serverless environment.
+* Finalize Amazon Bedrock API authentication (`amazon.titan-embed-text-v2:0`) in preparation for pipeline integration.
+* Pre-configure core modules (Database, network settings) to integrate immediately once the Amazon Bedrock API is unblocked.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks Completed During the Week:
+| Day | Task | Start Date | Completion Date | Reference Material |
+| :---: | :--- | :---: | :---: | :--- |
+| 2 | - Initialized Lambda and wrote test scripts to invoke Titan Bedrock. <br> - **Issue:** Encountered AccessDenied/Model Access Exception. <br> - **Action:** Identified root cause (Foundation Model limits) and opened an AWS Support Ticket immediately. | 06/22/2026 | 06/22/2026 | [AWS Support Center](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html) |
+| 3 | - While waiting for a response, experimented with various local fixes (switching regions, checking IAM Roles, adding `bedrock:*` policies, verifying billing) but remained blocked by AWS system controls. | 06/23/2026 | 06/23/2026 | [AWS IAM Documentation](https://docs.aws.amazon.com/iam/) |
+| 4 | - Received initial response from Support Team requesting additional details. Communicated back and forth, providing internship use-case details to prove safety compliance. <br> - Used the downtime to draft Aurora connection logic via `psycopg2`. | 06/24/2026 | 06/24/2026 | N/A |
+| 5 | - Continued waiting for AWS specialized teams to verify the account. <br> - Drafted the `retrieve()` function utilizing the HNSW algorithm to prepare for vector search workflows. | 06/25/2026 | 06/25/2026 | [pgvector HNSW index tuning](https://github.com/pgvector/pgvector#hnsw) |
+| 6 | - Ticket remained in "Pending AWS" status. <br> - Reviewed all VPC and Security Group configurations for Lambda. | 06/26/2026 | 06/26/2026 | N/A |
+| 7 | - Ticket status unchanged. <br> - Researched Amazon API Gateway documentation (Lambda Proxy Integration) in preparation for next week. | 06/27/2026 | 06/27/2026 | [API Gateway Docs](https://docs.aws.amazon.com/apigateway/) |
 
 ### Week 4 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Gained real-world cloud engineering experience: Navigating strict risk management and account verification policies within the AWS ecosystem.
 
-* Successfully created and configured an AWS Free Tier account.
+* Enhanced persistence and communication skills when dealing with AWS Support throughout the week: Responding rapidly and providing clear, continuous English descriptions to track support tickets closely.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Optimized blocked time by pre-configuring database infrastructure code (Aurora) and researching API Gateway in advance, preventing any project downtime.

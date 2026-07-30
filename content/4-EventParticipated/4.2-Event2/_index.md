@@ -1,7 +1,7 @@
 ---
 title: "Cloud Architect Game Show"
 date: 2026-06-20
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
@@ -47,5 +47,5 @@ The competition questions were designed closely following the standard AWS certi
 #### Some Photos From Attending the Event
 *(Since I forgot to take photos at the hall during the event, below is a screenshot serving as proof of successful attendance / check-in on the Portal instead)*
 
-![Portal check-in proof image](images/4-Event/portal.png)
+{{< event-image src="images/4-Event/portal.png" alt="Portal check-in proof image" >}}
 Overall, this was not merely an academic presentation but an extremely engaging "learn-through-play" experience! The Game Show format designed by the organizers was exceptionally clever—ranging from the lively competitive atmosphere to surprising tactical "plot twists"—which not only made complex Cloud concepts intuitive and easy to digest but also created an energetic intellectual playground. The event not only equipped me with practical architectural perspectives but also instilled further confidence to step steadily on my roadmap of conquering AWS certifications in the future.

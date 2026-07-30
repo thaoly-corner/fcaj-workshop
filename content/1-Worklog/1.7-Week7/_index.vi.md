@@ -1,59 +1,27 @@
 ---
-title: "Worklog Tuần 7"
-date: 2024-01-01
-weight: 1
+title: "Báo cáo Công việc - Tuần 7"
+date: 2026-07-13
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 7:
+* Tối ưu hóa hiệu năng truy vấn và tinh chỉnh phản hồi của mô hình (Prompt Engineering & Retrieval tuning) dựa trên trải nghiệm thực tế.
+* Bắt đầu cấu trúc nội dung và viết các chương cốt lõi cho Báo cáo thực tập.
 
-### Mục tiêu tuần 7:
+### Các công việc thực hiện trong tuần:
+| Day | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| :---: | :--- | :---: | :---: | :--- |
+| 2 | - Rà soát lại chất lượng các câu trả lời thực tế của hệ thống RAG, ghi nhận các trường hợp chưa tối ưu hoặc phản hồi chậm. | 13/07/2026 | 13/07/2026 |  |
+| 3 - 4 | - Tinh chỉnh câu lệnh Prompt và điều chỉnh thông số Top-K hoặc ngưỡng similarity của vector search trên pgvector để cải thiện độ chính xác. | 14/07/2026 | 15/07/2026 |  |
+| 5 | - Viết chi tiết chương cài đặt kỹ thuật (Lambda, Bedrock, Aurora pgvector) trong báo cáo thực tập. | 16/07/2026 | 16/07/2026 | N/A |
+| 6 | - Viết tiếp chương mô tả quá trình tích hợp backend và xử lý các sự cố hạ tầng thực tế (như kẹt tài khoản AWS, cấu hình IAM/VPC). | 17/07/2026 | 17/07/2026 |  |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Thành tựu Tuần 7:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Tối ưu hóa thành công luồng truy xuất và tinh chỉnh prompt, giúp câu trả lời của AI bám sát ngữ cảnh và tự nhiên hơn.
 
+* Hoàn thiện các chương nội dung trọng tâm và kỹ thuật của Báo cáo thực tập, ghi nhận toàn bộ quá trình phát triển hệ thống.
 
-### Kết quả đạt được tuần 7:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+---

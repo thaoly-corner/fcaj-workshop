@@ -1,59 +1,32 @@
 ---
-title: "Worklog Tuần 2"
-date: 2024-01-01
-weight: 1
+title: "Báo cáo Công việc - Tuần 2"
+date: 2026-06-08
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 2:
+* Tìm hiểu kiến trúc mạng cơ bản trên AWS (VPC, Subnet, Route Table, Internet Gateway, NAT Gateway).
+* Nắm vững các khái niệm bảo mật mạng qua Security Group và Network ACLs.
+* Thực hành chuỗi Lab 03: Tự tay khởi tạo một mạng nội bộ ảo (VPC) hoàn chỉnh và triển khai máy chủ ảo (EC2).
+* **Nâng cao:** Khởi tạo dịch vụ Cơ sở dữ liệu quan hệ (Amazon RDS/Aurora) trong mạng nội bộ và thiết lập kết nối an toàn từ EC2 đến Database (Kiến trúc 2-tier).
 
-### Mục tiêu tuần 2:
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày kết thúc | Nguồn tài liệu |
+| :---: | :--- | :---: | :---: | :--- |
+| 2 | - Tìm hiểu lý thuyết về AWS VPC và VPC Security. <br> - Thực hành Lab 03: Khái niệm Subnets, Route table và IGW. | 08/06/2026 | 08/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
+| 3 | - Thiết lập NAT Gateway, Security Group, Network ACLs. <br> - Thao tác tạo VPC, Subnet, IGW trên AWS Console. | 09/06/2026 | 09/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
+| 4 | -Cấu hình Route table, Security groups và tiến hành tạo EC2 Instances trong các Subnet đã tạo. <br> - Kiểm tra kết nối EC2 Instance Connect. | 10/06/2026 | 10/06/2026 | [First Cloud Journey Bootcamp - 2025](https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i) |
+| 5 | - Tìm hiểu về Amazon RDS/Aurora PostgreSQL. <br> - **Thực hành:** Tạo DB Subnet Group và khởi tạo một RDS Instance nằm trong Private Subnet. | 11/06/2026 | 11/06/2026 | [Amazon RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html) |
+| 6 | - **Thực hành:** Tinh chỉnh Inbound Rules của Database Security Group để chỉ cho phép EC2 truy cập vào cổng 5432. <br> - SSH vào EC2 và test kết nối (psql) đến RDS. | 12/06/2026 | 12/06/2026 | [AWS VPC Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Thành tựu Tuần 2:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Tự tay xây dựng thành công một môi trường hạ tầng mạng (VPC) tùy chỉnh trên đám mây, bao gồm đầy đủ Public Subnet, Private Subnet, IGW và NAT Gateway.
 
+* Triển khai thành công máy chủ ảo EC2 và hiểu rõ cách điều hướng traffic (routing) ra ngoài Internet một cách an toàn.
 
-### Kết quả đạt được tuần 2:
+* Nắm bắt và thực hành thành công kiến trúc 2-tier cơ bản: Đặt Web/App Server (EC2) ở tầng ngoài và Database (RDS) ở tầng trong bảo mật (Private Subnet).
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Ứng dụng nhuần nhuyễn Security Group để thiết lập quy tắc tường lửa (Firewall), cô lập hoàn toàn cơ sở dữ liệu khỏi Internet và chỉ cho phép máy chủ EC2 nội bộ được quyền truy cập.

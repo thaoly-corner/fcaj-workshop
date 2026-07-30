@@ -47,5 +47,5 @@ Các câu hỏi trong cuộc thi được thiết kế bám sát theo bộ khung
 #### Một số hình ảnh khi tham gia sự kiện
 *(Do thời điểm tham gia sự kiện em quên chụp ảnh tại hội trường, dưới đây là ảnh chụp màn hình minh chứng điểm danh / check-in thành công trên Portal để thay thế)*
 
-![Ảnh minh chứng check-in trên Portal](images/4-Event/portal.png)
+{{< event-image src="images/4-Event/portal.png" alt="Ảnh minh chứng check-in trên Portal" >}}
 Nhìn chung, đây không đơn thuần là một buổi báo cáo học thuật mà là một trải nghiệm "vừa học vừa chơi" cực kỳ cuốn hút! Format Game Show được BTC thiết kế vô cùng khéo léo—từ không khí thi đấu sôi nổi đến những pha "bẻ lái" chiến thuật đầy bất ngờ—không chỉ giúp các khái niệm Cloud phức tạp trở nên vô cùng trực quan và dễ thấm, mà còn tạo ra một sân chơi tri thức đầy năng lượng. Sự kiện không chỉ trang bị cho em những góc nhìn kiến trúc thực tế.

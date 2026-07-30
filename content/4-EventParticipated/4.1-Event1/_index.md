@@ -109,5 +109,5 @@ Attending the **“First Cloud AI Journey Meetup”** provided a practical, auth
 #### Event Photos
 *(Since I forgot to take photos at the venue during the event, below is a screenshot of my successful Portal check-in proof as a substitute)*
 
-![Portal Check-in Proof](images/4-Event/portal.png)
+{{< event-image src="images/4-Event/portal.png" alt="Portal Check-in Proof" >}}
 > Overall, the event provided valuable technical insights that helped give me a clearer direction for my upcoming career development path.

@@ -1,57 +1,30 @@
 ---
-title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog - Week 6"
+date: 2026-07-06
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 6 Objectives:
+* Review, optimize, and inspect all backend and Lambda source code within the RAG pipeline.
+* Seamlessly connect and execute End-to-End pipeline testing to resolve any lingering integration bugs.
+* Write comprehensive internal technical documentation for system architecture and maintenance handover.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks Completed During the Week:
+| Day | Task | Start Date | Completion Date | Reference Material |
+| :---: | :--- | :---: | :---: | :--- |
+| 2 | - Conducted a full code review of backend components and Lambda functions (Vectorize, RAG API) to standardize code structure. | 07/06/2026 | 07/06/2026 | |
+| 3 | - Verified Aurora database connection strings, database pooling logic, and environment variables on AWS. | 07/07/2026 | 07/08/2026 |  |
+| 4 | - Connected pipeline stages end-to-end (Bedrock Embedding → Aurora pgvector HNSW Search → Prompt Construction → LLM Response). | 07/08/2026 | 07/09/2026 |  |
+| 5 | - Executed End-to-End testing cycles and focused on bug fixing regarding business logic, exception handling, and request timeouts. | 07/09/2026 | 07/10/2026 |  |
+| 6 | - Fine-tuned vector similarity query performance and optimized execution times for Lambda API endpoints. | 07/10/2026 | 07/11/2026 | |
+| 7 | - Commenced drafting internal technical documentation: Detailing the RAG processing flow, AWS configurations, and Lambda operational procedures. | 07/11/2026 | 07/12/2026 |  |
 
 ### Week 6 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Reviewed and optimized all backend codebases, ensuring Lambda functions operate reliably and securely.
 
-* Successfully created and configured an AWS Free Tier account.
+* Successfully integrated and passed End-to-End testing for the complete RAG pipeline, completely resolving data flow and connectivity glitches.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Authored detailed internal technical documentation outlining the RAG workflow and AWS infrastructure setups for future maintenance and handover.

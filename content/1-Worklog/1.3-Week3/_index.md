@@ -1,57 +1,33 @@
 ---
-title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog - Week 3"
+date: 2026-06-15
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 3 Objectives:
+* Synchronize with the team's data processing (ETL) workflow: Complete the Retrieval-Augmented Generation (RAG) loop.
+* Build a two-stage retrieval architecture combining Vector Search and Cross-Encoder Reranking to optimize context precision.
+* Integrate an LLM (Google Gemini) to complete the context-aware question-answering workflow.
+* Explore AWS cloud infrastructure (Lambda, Bedrock) towards the end of the week.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks Completed During the Week:
+| Day | Task | Start Date | Completion Date | Reference Material |
+| :---: | :--- | :---: | :---: | :--- |
+| 2 | - Registered for an API Key and wrote a test script to invoke the Google Gemini API. | 06/15/2026 | 06/15/2026 | [Gemini API Docs](https://ai.google.dev/docs) |
+| 3 | - Loaded the `BAAI/bge-m3` model via `sentence-transformers` to embed search queries (synchronizing the vector space with the team). | 06/16/2026 | 06/16/2026 | [HuggingFace - BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) |
+| 4 | - Installed `qdrant-client` and connected to the Qdrant cluster. <br> - Finalized Payload (Metadata) structures with the ETL team. | 06/17/2026 | 06/17/2026 | [Qdrant Python Client](https://qdrant.tech/documentation/interfaces/python/) |
+| 5 | - Built a two-stage retrieval pipeline: <br> 1. Queried Qdrant to retrieve Top-N results. <br> 2. Applied a Cross-Encoder model (e.g., `BAAI/bge-reranker-base`) to score and rerank down to Top-K. | 06/18/2026 | 06/18/2026 | [Advanced RAG - Reranking](https://www.pinecone.io/learn/advanced-rag-techniques/) |
+| 6 | - Applied Prompt Engineering techniques: Injected the reranked Top-K context into Gemini to generate accurate Vietnamese responses. | 06/19/2026 | 06/19/2026 | [Prompt Engineering Guide](https://www.promptingguide.ai/) |
+| 7 | - **End-to-End Team Testing:** Awaited data push completion from the ETL pipeline -> Executed queries -> Reranked -> Generated responses via LLM. | 06/20/2026 | 06/20/2026 | N/A |
 
 ### Week 3 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Optimized context quality by successfully implementing a two-stage retrieval architecture, utilizing Cross-Encoders to refine and reassess the relevance of raw search results from Qdrant.
 
-* Successfully created and configured an AWS Free Tier account.
+* Achieved seamless team collaboration workflows, cleanly separating the Data Ingestion pipeline from the Data Consumption flow.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Synchronized the vector space by sharing the same `BAAI/bge-m3` model with the ETL workflow.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Completed the semantic search tool and integrated it smoothly with Google Gemini, successfully passing all local End-to-End test scenarios.
