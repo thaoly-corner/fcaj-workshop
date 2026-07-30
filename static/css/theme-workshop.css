@@ -27,6 +27,11 @@ body {
   color: var(--MAIN-TEXT-color) !important;
 }
 
+.profile-avatar {
+  width: 250px;
+  height: auto;
+}
+
 textarea:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,

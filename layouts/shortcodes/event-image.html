@@ -1,3 +1,4 @@
 {{- $src := .Get "src" -}}
 {{- $alt := .Get "alt" | default "" -}}
-<img src="{{ $src | relURL }}" alt="{{ $alt }}">
+{{- $class := .Get "class" | default "" -}}
+<img src="{{ $src | relURL }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }}>
