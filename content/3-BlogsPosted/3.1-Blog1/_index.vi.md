@@ -1,40 +1,79 @@
 ---
-title: "Blog 1: Overcoming Timeout Limits with AWS Fargate"
+title: "Blog 1: Vượt qua giới hạn Timeout với AWS Fargate"
 date: 2026-06-25
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-During the construction of the NewsRAG Pipeline system, one of the biggest technical challenges the team faced was crawling news data from major online newspapers such as VnExpress, Thanh Nien, and VietnamNet. Initially, the system was designed to run entirely on AWS Lambda. 
+Trong quá trình xây dựng hệ thống **NewsRAG Pipeline**, một trong những thách thức kỹ thuật lớn nhất mà nhóm gặp phải là thu thập dữ liệu từ các trang báo điện tử như **VnExpress**, **Thanh Niên** và **VietnamNet**. Ban đầu, toàn bộ quá trình thu thập dữ liệu được triển khai trên **AWS Lambda** nhằm tận dụng kiến trúc serverless và giảm chi phí vận hành.
 
-### The Problem: AWS Lambda Timeout Limits
-AWS Lambda is an excellent service for running code without managing servers (serverless). However, this service has a hard limit: the maximum execution time is only **15 minutes (900 seconds)**. 
+## Vấn đề: Giới hạn thời gian thực thi của AWS Lambda
 
-When the crawler scans the sitemaps of these newspapers, the number of articles to process often reaches thousands per day. Accessing, downloading HTML content, parsing data, and pushing it to the queue takes a lot of time because the system must always respect the page load speed and the source server's rules to avoid IP blocking (Rate Limiting). Consequently, the Lambda functions frequently timed out midway before they could complete their work loop.
+AWS Lambda là một dịch vụ serverless mạnh mẽ, cho phép chạy mã mà không cần quản lý máy chủ. Tuy nhiên, Lambda có một giới hạn quan trọng: **mỗi lần thực thi chỉ được phép chạy tối đa 15 phút (900 giây)**.
 
-### The Solution: Transitioning to Amazon ECS Fargate
-To thoroughly resolve this problem while maintaining the "Serverless" spirit (not having to maintain EC2 servers running 24/7), we decided to restructure the application to use **Amazon ECS Fargate**.
-{{< event-image src="images/3-Blogs/fargate.png" alt=" " >}}
+Đối với hệ thống NewsRAG, crawler phải quét sitemap của nhiều trang báo, lấy danh sách hàng nghìn bài viết, tải nội dung HTML, phân tích dữ liệu và gửi kết quả vào hàng đợi để xử lý tiếp theo.
 
-The core advantages of applying Fargate to the project include:
-* **No execution time limit:** Tasks on Fargate can run as long as needed until the data crawling is complete, without the fear of being interrupted midway.
-* **Flexible packaging with Docker:** The team used the **Scrapy framework** for data parsing. The entire source code and dependencies were neatly packaged into a Docker Image and securely stored on **Amazon ECR (Elastic Container Registry)**.
-* **Automated Scheduled Tasks:** Combined with Amazon EventBridge, the team configured the Crawler to automatically trigger during off-peak hours: **01:00 and 02:00 AM daily**.
-* **Resource optimization:** When scaling is needed, the team simply adjusts the hardware parameters. At the current stage, the crawler operates highly efficiently with a minimal configuration of **0.25 vCPU and 0.5 GB RAM**.
+Trong quá trình này, crawler còn phải tuân thủ tốc độ truy cập hợp lý nhằm tránh bị các website chặn IP hoặc giới hạn tốc độ (Rate Limiting). Vì vậy, thời gian thực thi thường vượt quá giới hạn của Lambda, khiến tiến trình bị dừng giữa chừng trước khi hoàn thành việc thu thập dữ liệu.
 
-### Results Achieved
-The shift to the ECS Fargate architecture brought absolute stability to the data collection flow (Ingestion Pipeline). Currently, the Crawler can run continuously and resiliently for about **30-40 minutes** every night to collect hundreds of the latest articles without encountering any disruption errors. 
+## Giải pháp: Chuyển sang Amazon ECS Fargate
 
-Moreover, the cost issue was also completely resolved because Fargate operates on a Pay-as-you-go model; the team only pays for the exact compute minutes that the Crawler actually runs.
+Để giải quyết triệt để vấn đề này nhưng vẫn giữ được ưu điểm của kiến trúc serverless, nhóm đã chuyển crawler sang chạy trên **Amazon ECS Fargate**.
 
-> **💡 Key Takeaway:**  
-> In cloud architecture design, there is no single AWS service that acts as a "silver bullet." Understanding the limits of each service like Lambda, and thereby flexibly transitioning to more suitable services like ECS Fargate, is a crucial skill to ensure the system's sustainability and scalability.
+{{< event-image src="images/3-Blogs/fargate.png" alt="AWS Fargate Architecture" >}}
+
+Việc sử dụng ECS Fargate mang lại nhiều lợi ích cho hệ thống:
+
+- **Không giới hạn thời gian thực thi**
+
+  Khác với Lambda, một Fargate Task có thể chạy cho đến khi hoàn thành toàn bộ quá trình thu thập dữ liệu mà không bị giới hạn 15 phút.
+
+- **Đóng gói ứng dụng bằng Docker**
+
+  Toàn bộ crawler được xây dựng bằng **Scrapy** và đóng gói thành Docker Image. Image sau đó được lưu trữ trên **Amazon Elastic Container Registry (Amazon ECR)** để dễ dàng triển khai và quản lý.
+
+- **Tự động chạy theo lịch**
+
+  Nhóm sử dụng **Amazon EventBridge Scheduler** để kích hoạt crawler tự động vào **01:00** và **02:00** mỗi ngày, đảm bảo dữ liệu luôn được cập nhật trong thời gian hệ thống có ít lưu lượng truy cập.
+
+- **Tối ưu tài nguyên**
+
+  Nhờ Fargate cho phép cấu hình tài nguyên linh hoạt, crawler hiện chỉ cần:
+
+  - **0.25 vCPU**
+  - **0.5 GB RAM**
+
+  nhưng vẫn đáp ứng tốt khối lượng công việc hằng ngày.
+
+## Kết quả đạt được
+
+Sau khi chuyển sang Amazon ECS Fargate, quá trình thu thập dữ liệu trở nên ổn định hơn đáng kể.
+
+Crawler có thể hoạt động liên tục khoảng **30–40 phút** mỗi đêm để thu thập hàng trăm bài viết mới mà không còn gặp lỗi timeout như trước đây.
+
+Bên cạnh đó, chi phí vận hành vẫn được duy trì ở mức thấp nhờ cơ chế **Pay-as-you-go** của Fargate. Hệ thống chỉ phải trả chi phí cho đúng khoảng thời gian crawler thực sự chạy, thay vì phải duy trì một máy chủ hoạt động liên tục.
+
+> **💡 Bài học rút ra**
+>
+> Trong quá trình thiết kế kiến trúc trên AWS, không có một dịch vụ nào phù hợp cho mọi trường hợp. AWS Lambda rất hiệu quả với các tác vụ ngắn, trong khi Amazon ECS Fargate lại là lựa chọn phù hợp hơn đối với các tiến trình cần thời gian xử lý dài hoặc khối lượng công việc lớn.
+>
+> Việc hiểu rõ ưu điểm và giới hạn của từng dịch vụ, sau đó lựa chọn hoặc chuyển đổi sang giải pháp phù hợp, là yếu tố quan trọng để xây dựng một hệ thống có khả năng mở rộng, ổn định và tối ưu chi phí.
 
 ---
-**References:**
-1. [AWS Lambda limits - AWS Documentation](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
-2. [AWS Fargate overview - Serverless compute for containers](https://aws.amazon.com/fargate/)
-3. [Scrapy Framework - Web Crawling & Scraping](https://scrapy.org/)
-4. [AWS Fargate or AWS Lambda?](https://docs.aws.amazon.com/decision-guides/latest/fargate-or-lambda/fargate-or-lambda.html)
-5. [Task Networking in AWS Fargate](https://aws.amazon.com/blogs/compute/task-networking-in-aws-fargate/)
+
+## Tài liệu tham khảo
+
+1. AWS Lambda Developer Guide – Limits
+   https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
+
+2. Amazon ECS Fargate Documentation
+   https://aws.amazon.com/fargate/
+
+3. Scrapy Framework
+   https://scrapy.org/
+
+4. AWS Decision Guide – AWS Lambda or AWS Fargate
+   https://docs.aws.amazon.com/decision-guides/latest/fargate-or-lambda/fargate-or-lambda.html
+
+5. Task Networking in AWS Fargate
+   https://aws.amazon.com/blogs/compute/task-networking-in-aws-fargate/
