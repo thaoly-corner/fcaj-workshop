@@ -1,242 +1,252 @@
 ---
-title : "Prerequiste"
-date : 2024-01-01 
-weight : 2 
-chapter : false
-pre : " <b> 5.2. </b> "
+title: "Prerequisites"
+date: 2026-07-25
+weight: 2
+chapter: false
+pre: " <b> 5.2 </b> "
 ---
 
-#### IAM permissions
-Add the following IAM permission policy to your user account to deploy and cleanup this workshop.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
 
+
+# Prerequisites
+
+Before starting this workshop, ensure you have the following tools installed and configured.
+
+## Required Accounts & Permissions
+
+### AWS Account
+- **AWS Account** with administrative access or permissions for:
+  - VPC, EC2, Subnets, Route Tables, Internet Gateway
+  - RDS (Aurora PostgreSQL Serverless v2)
+  - ECS (Fargate, Clusters, Task Definitions, Services)
+  - ECR (Repositories)
+  - Lambda (Functions, Layers, Permissions)
+  - SQS (Queues)
+  - EventBridge (Rules, Schedules, Targets)
+  - API Gateway (REST APIs)
+  - Bedrock (Model access: `amazon.titan-embed-text-v2:0`)
+  - IAM (Roles, Policies)
+  - CloudWatch (Log Groups, Metrics)
+  - CloudFormation (Stacks)
+
+> **Tip:** Use an IAM user with `AdministratorAccess` for the workshop, or ensure your role has the above permissions.
+
+### External API Keys (for RAG)
+- **Groq API Key** — Get from [console.groq.com](https://console.groq.com/) (Free tier available)
+- **Google Gemini API Key** — Get from [aistudio.google.com](https://aistudio.google.com/) (Free tier available)
+
+## Required Tools
+
+### 1. AWS CLI v2
+```bash
+# macOS
+brew install awscli
+
+# Linux
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# Windows
+msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
+
+# Verify
+aws --version
+# Should output: aws-cli/2.x.x
 ```
 
-#### Provision resources using CloudFormation
+**Configure AWS CLI:**
+```bash
+aws configure
+# Enter: AWS Access Key ID, Secret Access Key, Region (e.g., ap-southeast-2), Output format (json)
+```
 
-In this lab, we will use **N.Virginia region (us-east-1)**.
+### 2. Terraform >= 1.5.0
+```bash
+# macOS
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 
-To prepare the workshop environment, deploy this **CloudFormation Template** (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Accept all of the defaults when deploying the template. 
+# Linux
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+# Windows (Chocolatey)
+choco install terraform
 
-+ Tick 2 acknowledgement boxes
-+ Choose **Create stack**
+# Verify
+terraform version
+# Should output: Terraform v1.5.x or higher
+```
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+### 3. Docker & Docker Compose
+```bash
+# macOS (Docker Desktop)
+brew install --cask docker
 
-The **ClouddFormation** deployment requires about 15 minutes to complete.
+# Linux
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+# Log out and back in
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+# Docker Compose (usually included with Docker Desktop)
+# Linux standalone:
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
-+ **2 VPCs** have been created
+# Verify
+docker --version
+docker compose version
+```
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+### 4. Python 3.10+
+```bash
+# macOS
+brew install python@3.11
 
-+ **3 EC2s** have been created
+# Linux (Ubuntu/Debian)
+sudo apt update && sudo apt install python3.11 python3.11-venv python3.11-dev
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+# Windows
+# Download from python.org
+
+# Verify
+python3 --version
+# Should be 3.10.x or higher
+```
+
+### 5. Git
+```bash
+# macOS
+brew install git
+
+# Linux
+sudo apt install git
+
+# Windows
+# Download from git-scm.com
+
+# Verify
+git --version
+```
+
+### 6. Code Editor (Recommended: VS Code)
+```bash
+# macOS
+brew install --cask visual-studio-code
+
+# Linux
+# Download from code.visualstudio.com
+
+# Recommended extensions:
+# - HashiCorp Terraform
+# - Docker
+# - Python
+# - AWS Toolkit
+# - YAML
+```
+
+## Project Setup
+
+### Clone the Repository
+```bash
+git clone <your-repo-url> AWS-Projects
+cd AWS-Projects
+```
+
+### Python Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+# venv\Scripts\activate   # Windows
+
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### Environment Variables
+Copy the example file and fill in your values:
+```bash
+cp .env.example .env
+```
+
+Edit `.env` with your credentials:
+```env
+# Database (Aurora - filled after Terraform apply)
+DB_NAME=newsrag
+DB_USER=postgres
+DB_PASSWORD=your_secure_password
+DB_HOST=your-aurora-endpoint.cluster-xyz.ap-southeast-2.rds.amazonaws.com
+DB_PORT=5432
+
+# Qdrant (for local dev only)
+QDRANT_HOST=localhost
+QDRANT_PORT=6333
+QDRANT_COLLECTION_NAME=news_chunks
+
+# Kafka (for local dev only)
+KAFKA_BOOTSTRAP_SERVERS=localhost:9092
+KAFKA_TOPIC_NEWS=news_raw
+
+# Embedding Model (local dev)
+EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+EMBEDDING_SIZE=384
+
+# LLM APIs
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxx
+GEMINI_API_KEY=AIza_xxxxxxxxxxxxxxxxxxxx
+
+# AWS
+AWS_REGION=ap-southeast-2
+```
+
+### Terraform Variables
+Create `terraform.tfvars`:
+```bash
+cat > terraform.tfvars << EOF
+db_password     = "your_secure_password_123!"
+db_user         = "postgres"
+qdrant_api_key  = ""  # Leave empty for AWS deployment
+qdrant_host     = ""  # Leave empty for AWS deployment
+model_1_api_key = "gsk_xxxxxxxxxxxxxxxxxxxx"  # Groq
+model_2_api_key = "gsk_xxxxxxxxxxxxxxxxxxxx"  # Groq backup
+model_3_api_key = "AIza_xxxxxxxxxxxxxxxxxxxx" # Gemini
+EOF
+```
+
+> **Security:** Never commit `.env` or `terraform.tfvars` to git. They are in `.gitignore`.
+
+## Verify Setup
+
+Run the verification script:
+```bash
+make verify
+```
+
+Or manually check each tool:
+```bash
+aws sts get-caller-identity  # Should show your AWS account
+terraform version            # Should be >= 1.5.0
+docker run hello-world       # Should print "Hello from Docker!"
+python3 -c "import scrapy; print('Scrapy OK')"
+```
+
+## AWS Region
+
+This workshop uses **ap-southeast-2 (Sydney)** by default. To change:
+1. Update `provider "aws" { region = "your-region" }` in `main.tf`
+2. Update `AWS_REGION` in `.env`
+3. Ensure Bedrock model `amazon.titan-embed-text-v2:0` is available in your region (check [Bedrock regions](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html))
+
+## Bedrock Model Access
+
+Enable model access in AWS Console:
+1. Go to **Amazon Bedrock** → **Model access**
+2. Click **Manage model access**
+3. Enable **Amazon Titan Embeddings G1 - Text v2** (`amazon.titan-embed-text-v2:0`)
+4. Wait for status to show "Access granted"
+
+---
+
+**Next:** [Infrastructure as Code (Terraform)](5.3-Infrastructure/)

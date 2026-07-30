@@ -1,18 +1,177 @@
 ---
-title : "Introduction"
-date : 2024-01-01 
-weight : 1 
-chapter : false
-pre : " <b> 5.1. </b> "
+title: "Workshop Overview"
+date: 2026-07-25
+weight: 1
+chapter: false
+pre: "<b>5.1</b>"
 ---
 
-#### VPC endpoints
-+ **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
-+ Compute resources running in VPC can access  **Amazon S3**  using a Gateway endpoint. PrivateLink interface endpoints can be used by compute resources running in VPC or on-premises.
+# News RAG Pipeline on AWS
 
-#### Workshop overview
-In this workshop, you will use two VPCs. 
-+ **"VPC Cloud"** is for cloud resources such as a  **Gateway endpoint** and an EC2 instance to test with. 
-+ **"VPC On-Prem"** simulates an on-premises environment such as a factory or corporate datacenter. An EC2 instance running strongSwan VPN software has been deployed in "VPC On-prem" and automatically configured to establish a Site-to-Site VPN tunnel with AWS Transit Gateway. This VPN simulates connectivity from an on-premises location to the AWS cloud. To minimize costs, only one VPN instance is provisioned to support this workshop. When planning VPN connectivity for your production workloads, AWS recommends using multiple VPN devices for high availability.
+This workshop guides you through building a complete **News Retrieval-Augmented Generation (News RAG) Pipeline** on AWS using a **serverless architecture**. The pipeline automates the entire workflow—from collecting news articles and processing data, to generating vector embeddings, storing them in a data warehouse, and serving intelligent question-answering through Large Language Models (LLMs).
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+By the end of this workshop, you will be able to deploy a production-ready RAG system on AWS that is scalable, cost-efficient, and fully automated.
+
+## Architecture Overview
+
+{{< event-image src="images/5-Workshop/5.1-Workshop-overview/RAG-Pipeline.png" alt="News RAG Pipeline Architecture" >}}
+
+The pipeline consists of the following stages:
+
+1. **Crawler** collects news articles from public news websites.
+2. **Amazon SQS** receives and distributes incoming messages.
+3. **Lambda Consumer** stores raw data in Amazon Aurora PostgreSQL.
+4. **ETL Lambda** cleans the content, splits it into chunks, and generates embeddings using Amazon Bedrock.
+5. **Aurora PostgreSQL + pgvector** stores both structured data and vector embeddings.
+6. **RAG API** performs semantic retrieval and generates responses using an LLM.
+7. **Frontend Dashboard** provides search, chat, and pipeline monitoring capabilities.
+
+---
+
+# Learning Objectives
+
+After completing this workshop, you will be able to:
+
+- Provision AWS infrastructure using **Terraform**.
+- Package and deploy a **Scrapy crawler** on Amazon ECS Fargate.
+- Design a **Star Schema** data warehouse on Aurora PostgreSQL.
+- Build an event-driven data pipeline using **Amazon SQS** and **AWS Lambda**.
+- Generate vector embeddings using **Amazon Bedrock Titan Embeddings v2**.
+- Build a Retrieval-Augmented Generation (RAG) system with **pgvector** and LLMs.
+- Monitor, test, and optimize the complete pipeline.
+
+---
+
+# Workshop Modules
+
+| Module | Description | Duration |
+|---------|-------------|---------:|
+| **5.1** | Workshop Overview | 30 min |
+| **5.2** | Prerequisites | 30 min |
+| **5.3** | Infrastructure Deployment with Terraform | 60 min |
+| **5.4** | Building the ECS Fargate Crawler | 45 min |
+| **5.5** | Amazon SQS & Lambda Consumer | 45 min |
+| **5.6** | ETL, Chunking & Embedding | 60 min |
+| **5.7** | Building the RAG API | 45 min |
+| **5.8** | Frontend Dashboard Integration | 60 min |
+| **5.9** | Testing & Monitoring | 30 min |
+| **5.10** | Resource Cleanup | 15 min |
+
+---
+
+# Prerequisites
+
+Before starting this workshop, make sure you have the following:
+
+### AWS Services
+
+- AWS Account
+- Permissions for:
+  - Amazon VPC
+  - Amazon ECS
+  - Amazon ECR
+  - Amazon Aurora PostgreSQL
+  - AWS Lambda
+  - Amazon SQS
+  - Amazon EventBridge
+  - Amazon API Gateway
+  - Amazon Bedrock
+  - Amazon CloudWatch
+  - AWS IAM
+
+### Required Tools
+
+- AWS CLI
+- Terraform (>= 1.5)
+- Docker & Docker Compose
+- Python 3.10+
+- Git
+- Visual Studio Code (recommended)
+
+---
+
+# Estimated Monthly Cost
+
+The following estimates are based on the **ap-southeast-2 (Sydney)** AWS Region.
+
+| AWS Service | Purpose | Estimated Cost |
+|-------------|---------|---------------:|
+| Amazon ECS Fargate | Run the Scrapy crawler | ~$1.11 |
+| Aurora Serverless v2 | Data Warehouse + pgvector | ~$44.66 |
+| Amazon Bedrock | Embedding & LLM inference | ~$10.00 |
+| AWS Lambda | ETL & RAG API | ~$3.00 |
+| VPC Endpoints | Private networking | ~$28.00 |
+| Amazon S3 | Logs and Terraform state | ~$0.80 |
+| Amazon SQS + EventBridge | Queue & Scheduler | ~$0.00 |
+| Amazon CloudWatch | Logging & Monitoring | ~$5.80 |
+| **Total** | | **~$93.37/month** |
+
+> **Note**
+>
+> This is an estimated cost for a demonstration environment. Actual costs may be significantly lower if you use AWS Free Tier resources, reduce the workload, or terminate resources after completing the workshop.
+
+### Workload Assumptions
+
+| Item | Value |
+|------|-------|
+| News websites | 5–10 public news sites |
+| New articles | ~500 articles/day |
+| Average article length | ~1,200 words |
+| Generated chunks | ~3,000 chunks/day |
+| Generated embeddings | ~3,000 vectors/day |
+| RAG requests | ~120 requests/day |
+
+---
+
+# Project Structure
+
+```text
+AWS-Projects/
+├── config/
+├── crawler/
+├── consumer/
+├── etl/
+├── search/
+├── database/
+├── terraform/
+├── main.py
+├── Dockerfile
+├── docker-compose.yml
+├── deploy.sh
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# Architecture Migration: v1 → v2
+
+This workshop is based on an upgraded architecture from the original thesis implementation. The new version focuses on a **simpler, fully serverless, and AWS-native architecture** that is easier to deploy, maintain, and scale.
+
+| Component | v1 | v2 |
+|-----------|----|----|
+| Crawler | Lambda + Scrapy | ECS Fargate + SitemapSpider |
+| Message Queue | Apache Kafka | Amazon SQS |
+| Embedding | Local BGE model | Amazon Bedrock Titan Embeddings v2 |
+| Vector Database | Qdrant | Aurora PostgreSQL + pgvector |
+| Vectorization | Dedicated Fargate task | Integrated into ETL Lambda |
+| Query Embedding | Local embedding model | Amazon Bedrock |
+
+### Why migrate to v2?
+
+- Eliminate self-managed infrastructure such as Kafka and Qdrant.
+- Reduce the number of services to operate.
+- Leverage AWS managed serverless services.
+- Simplify infrastructure deployment using Terraform.
+- Build a fully AWS-native architecture.
+- Improve scalability, maintainability, and operational efficiency.
+
+> **Important**
+>
+> Both the ETL pipeline and the RAG API **must use the same embedding model** (`amazon.titan-embed-text-v2:0`).
+>
+> Using different embedding models results in different vector spaces, causing semantic retrieval to become inaccurate.
+
+---
+
+**Next:** [Prerequisites](5.2-Prerequisites/)
