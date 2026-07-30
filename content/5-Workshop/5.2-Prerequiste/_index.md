@@ -1,15 +1,10 @@
 ---
 title: "Prerequisites"
-date: 2026-07-25
+date: 2026-07-28
 weight: 2
 chapter: false
 pre: " <b> 5.2 </b> "
 ---
-
-
-
-# Prerequisites
-
 Before starting this workshop, ensure you have the following tools installed and configured.
 
 ## Required Accounts & Permissions

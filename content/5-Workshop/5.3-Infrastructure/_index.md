@@ -1,14 +1,10 @@
 ---
 title: "Infrastructure as Code (Terraform)"
-date: 2026-07-25
+date: 2026-07-28
 weight: 3
 chapter: false
 pre: " <b> 5.3 </b> "
 ---
-
-
-# Infrastructure as Code (Terraform)
-
 This section covers the complete AWS infrastructure defined in `main.tf` using Terraform for the News RAG Pipeline.
 
 ## Prerequisites

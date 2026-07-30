@@ -1,13 +1,10 @@
 ---
 title: "Điều kiện tiên quyết"
-date: 2026-07-25
+date: 2026-07-28
 weight: 2
 chapter: false
 pre: " <b> 5.2 </b> "
 ---
-
-
-# Điều kiện tiên quyết
 
 Trước khi bắt đầu workshop này, hãy đảm bảo bạn đã cài đặt và cấu hình các công cụ sau.
 
