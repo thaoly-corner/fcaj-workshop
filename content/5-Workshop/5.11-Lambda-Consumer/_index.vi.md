@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.11 </b> "
 ---
 
-
-
-# Lambda Consumer: SQS Trigger → Aurora PostgreSQL
-
 Phần này bao gồm Lambda function consume messages từ SQS và insert bài viết thô vào Aurora PostgreSQL với SHA256 deduplication.
 
 ## Prerequisites

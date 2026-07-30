@@ -5,11 +5,6 @@ weight: 12
 chapter: false
 pre: " <b> 5.12 </b> "
 ---
-
-
-
-# Lambda ETL + Bedrock Titan Embedding
-
 Phần này bao gồm Lambda function chuyển đổi bài viết thô thành Star Schema, tạo embeddings dùng Amazon Bedrock Titan Embed v2, và lưu vectors vào Aurora pgvector.
 
 ## Prerequisites

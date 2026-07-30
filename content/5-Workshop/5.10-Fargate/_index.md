@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.10 </b> "
 ---
 
-
-
-# Fargate Crawler: ECS Fargate + EventBridge Scheduler
-
 This section covers deploying the Scrapy crawler as an ECS Fargate task triggered by EventBridge Scheduler.
 
 ## Prerequisites

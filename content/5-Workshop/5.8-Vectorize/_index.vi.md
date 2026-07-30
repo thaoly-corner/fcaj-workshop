@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.8 </b> "
 ---
 
-
-
-# Vector hóa: Tạo Embeddings & Lưu vào Vector DB
-
 Phần này bao gồm bước vector hóa chuyển đổi text chunks thành vector embeddings và lưu trữ cho similarity search.
 
 ## Prerequisites

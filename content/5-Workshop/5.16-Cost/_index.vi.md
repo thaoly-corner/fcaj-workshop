@@ -5,9 +5,6 @@ weight: 16
 chapter: false
 pre: " <b> 5.16 </b> "
 ---
-
-# Tối ưu chi phí
-
 Phần này trình bày các chiến lược tối ưu chi phí cho hệ thống **News RAG Pipeline** trên AWS, đồng thời vẫn đảm bảo hiệu năng, khả năng mở rộng và tính ổn định của hệ thống.
 
 ## Chi phí ước tính (Theo tháng, khu vực ap-southeast-2)

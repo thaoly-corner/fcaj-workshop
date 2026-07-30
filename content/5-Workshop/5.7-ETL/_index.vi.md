@@ -5,11 +5,6 @@ weight: 7
 chapter: false
 pre: " <b> 5.7 </b> "
 ---
-
-
-
-# ETL & Star Schema Transformation
-
 Phần này bao gồm quy trình ETL transform bài viết thô từ `article_metadata` thành Star Schema tối ưu cho analytics và RAG retrieval.
 
 ## Prerequisites

@@ -5,9 +5,6 @@ weight: 17
 chapter: false
 pre: " <b> 5.17 </b> "
 ---
-
-# Clean Up Resources
-
 This section provides step-by-step instructions to tear down all AWS resources created during the workshop to avoid ongoing charges.
 
 ## ⚠️ Before You Begin

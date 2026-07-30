@@ -28,7 +28,7 @@ The shift to the ECS Fargate architecture brought absolute stability to the data
 
 Moreover, the cost issue was also completely resolved because Fargate operates on a Pay-as-you-go model; the team only pays for the exact compute minutes that the Crawler actually runs.
 
-> **💡 Key Takeaway:**  
+> **Key Takeaway:**  
 > In cloud architecture design, there is no single AWS service that acts as a "silver bullet." Understanding the limits of each service like Lambda, and thereby flexibly transitioning to more suitable services like ECS Fargate, is a crucial skill to ensure the system's sustainability and scalability.
 
 ---

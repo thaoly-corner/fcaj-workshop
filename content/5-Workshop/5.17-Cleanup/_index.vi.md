@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.17 </b> "
 ---
 
-# Dọn dẹp tài nguyên
-
 Phần này cung cấp hướng dẫn từng bước để xóa toàn bộ tài nguyên AWS được tạo trong workshop để tránh chi phí phát sinh.
 
 ## ⚠️ Trước khi bắt đầu

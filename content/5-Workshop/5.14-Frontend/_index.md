@@ -5,9 +5,6 @@ weight: 14
 chapter: false
 pre: " <b> 5.14 </b> "
 ---
-
-# Frontend Integration: Next.js Dashboard + FastAPI Backend
-
 This section covers the web interface for the News RAG system, including Dashboard, Search, AI Chat, Article Explorer, and Pipeline Monitor.
 
 ## Prerequisites

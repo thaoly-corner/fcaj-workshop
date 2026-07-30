@@ -6,9 +6,6 @@ chapter: false
 pre: " <b> 5.4 </b> "
 ---
 
-
-# Thiết lập phát triển cục bộ
-
 Phần này bao gồm việc thiết lập môi trường phát triển cục bộ hoàn chỉnh sử dụng Docker Compose để mô phỏng các dịch vụ AWS cục bộ.
 
 ## Prerequisites

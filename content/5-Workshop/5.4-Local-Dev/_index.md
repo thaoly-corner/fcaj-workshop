@@ -5,11 +5,6 @@ weight: 4
 chapter: false
 pre: " <b> 5.4 </b> "
 ---
-
-
-
-# Local Development Setup
-
 This section covers setting up the complete local development environment using Docker Compose to simulate the AWS services locally.
 
 ## Prerequisites

@@ -5,9 +5,6 @@ weight: 16
 chapter: false
 pre: " <b> 5.16 </b> "
 ---
-
-# Cost Optimization
-
 This section presents the recommended strategies for optimizing the operational cost of the **News RAG Pipeline** on AWS while maintaining system performance, scalability, and reliability.
 
 ## Estimated Monthly Cost (ap-southeast-2)

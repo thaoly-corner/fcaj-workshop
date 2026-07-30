@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.13 </b> "
 ---
 
-
-
-# RAG API: Lambda + API Gateway
-
 Phần này bao gồm REST API nhận natural language queries, retrieve relevant chunks qua pgvector similarity search, và generate answers dùng LLMs (Groq/Gemini).
 
 ## Prerequisites

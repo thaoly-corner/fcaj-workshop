@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.7 </b> "
 ---
 
-
-
-# ETL & Star Schema Transformation
-
 This section covers the ETL process that transforms raw articles from `article_metadata` into a Star Schema optimized for analytics and RAG retrieval.
 
 ## Prerequisites

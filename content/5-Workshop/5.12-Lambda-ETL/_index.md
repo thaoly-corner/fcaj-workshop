@@ -6,9 +6,6 @@ chapter: false
 pre: " <b> 5.12 </b> "
 ---
 
-
-# Lambda ETL + Bedrock Titan Embedding
-
 This section covers the Lambda function that transforms raw articles into Star Schema, generates embeddings using Amazon Bedrock Titan Embed v2, and stores vectors in Aurora pgvector.
 
 ## Prerequisites
@@ -683,7 +680,7 @@ LIMIT 10;
 
 ## Test & Validation
 
-### 1. Invoke Manually
+### 1. Invoke Manually (Validation)
 ```bash
 aws lambda invoke \
   --function-name newsrag-etl \
@@ -695,7 +692,7 @@ cat response.json | jq .
 ```
 **Expected:** `statusCode: 200` with ETL results.
 
-### 2. Check Logs
+### 2. Check Logs (Validation)
 ```bash
 aws logs tail /aws/lambda/newsrag-etl --follow
 ```

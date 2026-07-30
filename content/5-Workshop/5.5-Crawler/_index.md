@@ -5,11 +5,6 @@ weight: 5
 chapter: false
 pre: " <b> 5.5 </b> "
 ---
-
-
-
-# Crawler Development
-
 This section covers building the Scrapy-based news crawler that extracts articles from Vietnamese news sites using SitemapSpider.
 
 ## Prerequisites
@@ -472,7 +467,7 @@ cat output.json | python -m json.tool | head -50
 
 Expected: JSON array with `url`, `title`, `content`, `source_name`, `published_at` fields.
 
-### Verify Kafka Messages
+### Verify Kafka Messages (Validation)
 
 ```bash
 # Consume messages

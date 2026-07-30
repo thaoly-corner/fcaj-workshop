@@ -25,7 +25,7 @@ Sau khi phân tích bài toán đánh đổi (Trade-off), nhóm đã quyết đ�
 ### Kết quả đạt được
 Bằng việc mạnh dạn loại bỏ Kafka và chuyển sang kiến trúc SQS kết hợp Lambda, hệ thống không chỉ trở nên nhẹ nhàng, dễ bảo trì hơn mà còn tiết kiệm được một khoản ngân sách vận hành rất lớn. 
 
-> **💡 Đúc kết kinh nghiệm:**  
+> **Đúc kết kinh nghiệm:**  
 > Trong quá trình xây dựng hệ thống, lựa chọn công nghệ không phải là chọn thứ "xịn nhất" hay "phức tạp nhất", mà là chọn công cụ **"phù hợp nhất"** với quy mô, bài toán kinh doanh và ngân sách hiện tại.
 
 ---

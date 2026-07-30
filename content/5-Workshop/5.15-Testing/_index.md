@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.15 </b> "
 ---
 
-{
-
-# Testing & Monitoring
-
 This section covers end-to-end testing, RAG evaluation with RAGAS, and production monitoring setup.
 
 ## Test Suite Overview

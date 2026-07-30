@@ -5,11 +5,6 @@ weight: 6
 chapter: false
 pre: " <b> 5.6 </b> "
 ---
-
-
-
-# Data Ingestion: Kafka Consumer → PostgreSQL
-
 This section covers the consumer service that reads raw articles from Kafka and persists them to PostgreSQL.
 
 ## Prerequisites

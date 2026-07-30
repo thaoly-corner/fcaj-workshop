@@ -25,7 +25,7 @@ After analyzing the architectural trade-offs, the team decided to replace the en
 ### Results Achieved
 By boldly removing Kafka and transitioning to an SQS combined with Lambda architecture, the system not only became lighter and easier to maintain but also saved a substantial operational budget.
 
-> **💡 Key Takeaway:**  
+> **Key Takeaway:**  
 > In system building, choosing technology is not about picking the "fanciest" or "most complex" one, but selecting the tool that is **"most suitable"** for the current scale, business problem, and budget.
 
 ---

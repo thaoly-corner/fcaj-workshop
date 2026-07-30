@@ -53,7 +53,7 @@ Crawler có thể hoạt động liên tục khoảng **30–40 phút** mỗi đ
 
 Bên cạnh đó, chi phí vận hành vẫn được duy trì ở mức thấp nhờ cơ chế **Pay-as-you-go** của Fargate. Hệ thống chỉ phải trả chi phí cho đúng khoảng thời gian crawler thực sự chạy, thay vì phải duy trì một máy chủ hoạt động liên tục.
 
-> **💡 Bài học rút ra**
+> **Bài học rút ra**
 >
 > Trong quá trình thiết kế kiến trúc trên AWS, không có một dịch vụ nào phù hợp cho mọi trường hợp. AWS Lambda rất hiệu quả với các tác vụ ngắn, trong khi Amazon ECS Fargate lại là lựa chọn phù hợp hơn đối với các tiến trình cần thời gian xử lý dài hoặc khối lượng công việc lớn.
 >

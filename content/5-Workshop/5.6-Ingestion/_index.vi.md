@@ -5,11 +5,6 @@ weight: 6
 chapter: false
 pre: " <b> 5.6 </b> "
 ---
-
-
-
-# Nhập dữ liệu: Kafka Consumer → PostgreSQL
-
 Phần này bao gồm consumer service đọc bài viết thô từ Kafka và lưu vào PostgreSQL.
 
 ## Prerequisites

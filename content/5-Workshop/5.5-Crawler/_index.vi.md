@@ -5,11 +5,6 @@ weight: 5
 chapter: false
 pre: " <b> 5.5 </b> "
 ---
-
-
-
-# Phát triển Crawler
-
 Phần này bao gồm việc xây dựng crawler Scrapy để thu thập bài báo từ các trang tin tức Việt Nam sử dụng SitemapSpider.
 
 ## Prerequisites
@@ -472,7 +467,7 @@ cat output.json | python -m json.tool | head -50
 
 Kết quả mong đợi: mảng JSON với các trường `url`, `title`, `content`, `source_name`, `published_at`.
 
-### Xác minh Kafka Messages
+### Xác minh Kafka Messages (Validation)
 
 ```bash
 # Consume messages

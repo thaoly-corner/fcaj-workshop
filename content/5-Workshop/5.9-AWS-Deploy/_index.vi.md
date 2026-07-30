@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.9 </b> "
 ---
 
-
-
-# Chuẩn bị triển khai AWS
-
 Phần này bao gồm việc build Docker images, push lên ECR, và chuẩn bị Lambda deployment packages cho kiến trúc serverless AWS.
 
 ## Điều kiện tiên quyết

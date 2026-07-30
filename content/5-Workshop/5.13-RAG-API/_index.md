@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.13 </b> "
 ---
 
-
-
-# RAG API: Lambda + API Gateway
-
 This section covers the REST API that accepts natural language queries, retrieves relevant chunks via pgvector similarity search, and generates answers using LLMs (Groq/Gemini).
 
 ## Prerequisites
@@ -648,7 +644,7 @@ aws logs tail /aws/lambda/newsrag-rag-api --follow
 
 ## Test & Validation
 
-### 1. Get API URL
+### 1. Get API URL (Validation)
 ```bash
 API_URL=$(terraform output -raw api_url)
 echo $API_URL
@@ -667,7 +663,7 @@ curl -X POST "$API_URL" \
 ```
 **Expected:** JSON with `summary`, `results` array (5 items with scores), `duration_ms`.
 
-### 3. Test vanilla (no RAG)
+### 3. Test vanilla (Validation, no RAG)
 ```bash
 curl -X POST "$API_URL" \
   -H "Content-Type: application/json" \
@@ -678,7 +674,7 @@ curl -X POST "$API_URL" \
   }' | jq .
 ```
 
-### 4. Test from Next.js Frontend
+### 4. Test from Next.js Frontend (Validation)
 ```typescript
 // lib/api.ts
 export async function askRAG(query: string, model = "qwen3-8b-instant", topK = 5) {

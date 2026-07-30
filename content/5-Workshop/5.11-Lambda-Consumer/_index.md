@@ -5,11 +5,6 @@ weight: 11
 chapter: false
 pre: " <b> 5.11 </b> "
 ---
-
-
-
-# Lambda Consumer: SQS Trigger → Aurora PostgreSQL
-
 This section covers the Lambda function that consumes messages from SQS and inserts raw articles into Aurora PostgreSQL with SHA256 deduplication.
 
 ## Prerequisites
@@ -456,7 +451,7 @@ resource "aws_cloudwatch_metric_alarm" "sqs_backlog" {
 
 ## Test & Validation
 
-### 1. Send Test Message to SQS
+### 1. Send Test Message to SQS (Validation)
 ```bash
 QUEUE_URL=$(aws sqs get-queue-url --queue-name newsrag-news-raw --query "QueueUrl" --output text)
 
@@ -475,13 +470,13 @@ aws sqs send-message \
   }'
 ```
 
-### 2. Check Lambda Logs
+### 2. Check Lambda Logs (Validation)
 ```bash
 aws logs tail /aws/lambda/newsrag-consumer --follow
 ```
 **Expected:** `Inserted article: https://vnexpress.net/test-article-123...`
 
-### 3. Verify in Database
+### 3. Verify in Database (Validation)
 ```bash
 ENDPOINT=$(terraform output -raw rds_endpoint)
 psql "postgresql://postgres:password@${ENDPOINT}:5432/newsrag" -c "

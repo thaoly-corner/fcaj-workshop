@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 5.15 </b> "
 ---
 
-
-
-# Kiểm thử & Giám sát
-
 Phần này bao gồm end-to-end testing, RAG evaluation với RAGAS, và production monitoring setup.
 
 ## Tổng quan Test Suite
