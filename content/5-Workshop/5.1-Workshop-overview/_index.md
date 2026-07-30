@@ -44,18 +44,18 @@ After completing this workshop, you will be able to:
 
 # Workshop Modules
 
-| Module | Description | Duration |
-|---------|-------------|---------:|
-| **5.1** | Workshop Overview | 30 min |
-| **5.2** | Prerequisites | 30 min |
-| **5.3** | Infrastructure Deployment with Terraform | 60 min |
-| **5.4** | Building the ECS Fargate Crawler | 45 min |
-| **5.5** | Amazon SQS & Lambda Consumer | 45 min |
-| **5.6** | ETL, Chunking & Embedding | 60 min |
-| **5.7** | Building the RAG API | 45 min |
-| **5.8** | Frontend Dashboard Integration | 60 min |
-| **5.9** | Testing & Monitoring | 30 min |
-| **5.10** | Resource Cleanup | 15 min |
+| Module | Description |
+|---------|-------------|
+| **5.1** | Workshop Overview | 
+| **5.2** | Prerequisites |
+| **5.3** | Infrastructure Deployment with Terraform | 
+| **5.4** | Building the ECS Fargate Crawler | 
+| **5.5** | Amazon SQS & Lambda Consumer | 
+| **5.6** | ETL, Chunking & Embedding | 
+| **5.7** | Building the RAG API | 
+| **5.8** | Frontend Dashboard Integration | 
+| **5.9** | Testing & Monitoring | 
+| **5.10** | Resource Cleanup | 
 
 ---
 

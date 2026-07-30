@@ -7,9 +7,9 @@ pre: " <b> 5. </b> "
 ---
 
 
-# News RAG Pipeline on AWS — Workshop
 
-## Giới thiệu dự án
+
+# Giới thiệu dự án
 
 **News RAG Pipeline on AWS** là hệ thống end-to-end hoàn chỉnh tự động thu thập tin tức từ các báo điện tử Việt Nam, xử lý qua Data Warehouse (Star Schema), tạo vector embedding bằng Amazon Bedrock, và cung cấp giao diện hỏi đáp thông minh sử dụng kiến trúc RAG (Retrieval-Augmented Generation) — tất cả chạy serverless trên AWS.
 

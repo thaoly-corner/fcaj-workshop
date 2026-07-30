@@ -1,5 +1,5 @@
 ---
-title: "Workshop"
+title: "News RAG Pipeline on AWS — Workshop"
 date: 2026-07-28
 weight: 5
 chapter: false
@@ -7,9 +7,8 @@ pre: " <b> 5. </b> "
 ---
 
 
-# News RAG Pipeline on AWS — Workshop
 
-## Project Introduction
+# Project Introduction
 
 **News RAG Pipeline on AWS** is a complete end-to-end system that automatically collects news articles from Vietnamese news sites, processes them through a Data Warehouse (Star Schema), generates vector embeddings using Amazon Bedrock, and provides an intelligent Q&A interface using Retrieval-Augmented Generation (RAG) architecture — all running serverless on AWS.
 

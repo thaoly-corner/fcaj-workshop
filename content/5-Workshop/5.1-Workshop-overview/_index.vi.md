@@ -44,18 +44,18 @@ Sau khi hoàn thành workshop này, bạn sẽ có thể:
 
 # Nội dung Workshop
 
-| Module | Nội dung | Thời lượng |
-|---------|-----------|-----------:|
-| **5.1** | Tổng quan Workshop | 30 phút |
-| **5.2** | Điều kiện tiên quyết | 30 phút |
-| **5.3** | Triển khai hạ tầng bằng Terraform | 60 phút |
-| **5.4** | Xây dựng Crawler trên ECS Fargate | 45 phút |
-| **5.5** | Amazon SQS & Lambda Consumer | 45 phút |
-| **5.6** | ETL, Chunking & Embedding | 60 phút |
-| **5.7** | Xây dựng RAG API | 45 phút |
-| **5.8** | Tích hợp Frontend Dashboard | 60 phút |
-| **5.9** | Kiểm thử và Giám sát | 30 phút |
-| **5.10** | Dọn dẹp tài nguyên | 15 phút |
+| Module | Nội dung | 
+|---------|-----------|
+| **5.1** | Tổng quan Workshop | 
+| **5.2** | Điều kiện tiên quyết | 
+| **5.3** | Triển khai hạ tầng bằng Terraform | 
+| **5.4** | Xây dựng Crawler trên ECS Fargate | 
+| **5.5** | Amazon SQS & Lambda Consumer | 
+| **5.6** | ETL, Chunking & Embedding | 
+| **5.7** | Xây dựng RAG API | 
+| **5.8** | Tích hợp Frontend Dashboard | 
+| **5.9** | Kiểm thử và Giám sát | 
+| **5.10** | Dọn dẹp tài nguyên | 
 
 ---
 
