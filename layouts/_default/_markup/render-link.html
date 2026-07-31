@@ -2,12 +2,16 @@
 {{- $url := urls.Parse $destination -}}
 {{- if and (not $url.IsAbs) (not (hasPrefix $destination "#")) -}}
   {{- $targetDir := path.Join (path.Dir .Page.File.Dir) $url.Path -}}
-  {{- $sameParent := eq (lower (path.Dir .Page.File.Dir)) (lower (path.Dir $targetDir)) -}}
-  {{- if and $sameParent .Page.Parent -}}
+  {{- $sourceDir := split (trim .Page.File.Dir "/") "/" -}}
+  {{- if eq (len $sourceDir) 1 -}}
+    {{- $destination = path.Join .Page.RelPermalink (lower $url.Path) -}}
+  {{- else if .Page.Parent -}}
     {{- $destination = path.Join .Page.Parent.RelPermalink (lower $url.Path) -}}
   {{- else -}}
-    {{- $destination = path.Join .Page.RelPermalink (lower $url.Path) -}}
+    {{- $currentPath := strings.TrimSuffix .Page.RelPermalink "/" -}}
+    {{- $destination = path.Join (path.Dir $currentPath) (lower $url.Path) -}}
   {{- end -}}
+  {{- $destination = printf "%s/" $destination -}}
   {{- if $url.Fragment -}}
     {{- $destination = printf "%s#%s" $destination $url.Fragment -}}
   {{- end -}}
