@@ -77,3 +77,6 @@ Bên cạnh đó, chi phí vận hành vẫn được duy trì ở mức thấp 
 
 5. Task Networking in AWS Fargate
    https://aws.amazon.com/blogs/compute/task-networking-in-aws-fargate/
+
+## Ảnh bài blog trên Group
+{{< event-image src="images/3-Blogs/fargate-blog.png" alt=" " >}}

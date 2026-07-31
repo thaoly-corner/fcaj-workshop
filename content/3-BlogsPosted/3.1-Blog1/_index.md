@@ -38,3 +38,6 @@ Moreover, the cost issue was also completely resolved because Fargate operates o
 3. [Scrapy Framework - Web Crawling & Scraping](https://scrapy.org/)
 4. [AWS Fargate or AWS Lambda?](https://docs.aws.amazon.com/decision-guides/latest/fargate-or-lambda/fargate-or-lambda.html)
 5. [Task Networking in AWS Fargate](https://aws.amazon.com/blogs/compute/task-networking-in-aws-fargate/)
+
+## Blog Post Images in the Group
+{{< event-image src="images/3-Blogs/fargate-blog.png" alt=" " >}}

@@ -35,3 +35,6 @@ Kiến trúc kết hợp giữa Amazon Bedrock và Aurora pgvector mang lại m�
 1. [Amazon Titan Text Embeddings models](https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html)
 2. [Running pgvector in production on Amazon Aurora PostgreSQL](https://aws.amazon.com/blogs/database/running-pgvector-in-production-on-amazon-aurora-postgresql/)
 3. [pgvector: Open-source vector similarity search for Postgres](https://github.com/pgvector/pgvector)
+
+## Ảnh bài blog trên Group
+{{< event-image src="images/3-Blogs/pgvector.png" alt=" " >}}

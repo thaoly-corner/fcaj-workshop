@@ -33,3 +33,6 @@ By boldly removing Kafka and transitioning to an SQS combined with Lambda archit
 1. [Amazon SQS pricing & Free Tier - AWS Documentation](https://aws.amazon.com/sqs/pricing/)
 2. [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
 3. [Amazon SQS Dead-Letter Queues (DLQ)](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
+
+## Blog Post Images in the Group
+{{< event-image src="images/3-Blogs/sqs.png" alt=" " >}}

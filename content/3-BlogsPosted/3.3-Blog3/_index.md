@@ -35,3 +35,6 @@ This is the foundational technical highlight that the team is most proud of in t
 1. [Amazon Titan Text Embeddings models](https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html)
 2. [Running pgvector in production on Amazon Aurora PostgreSQL](https://aws.amazon.com/blogs/database/running-pgvector-in-production-on-amazon-aurora-postgresql/)
 3. [pgvector: Open-source vector similarity search for Postgres](https://github.com/pgvector/pgvector)
+
+## Blog Post Images in the Group
+{{< event-image src="images/3-Blogs/pgvector.png" alt=" " >}}
