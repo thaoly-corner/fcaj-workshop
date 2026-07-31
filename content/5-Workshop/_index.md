@@ -39,7 +39,7 @@ EventBridge Scheduler (01:00, 02:00 UTC)
 | **ETL + Embed** | AWS Lambda (15 min timeout) | Clean HTML → Chunk 500 tokens → Bedrock Titan Embed v2 → pgvector |
 | **Warehouse** | Aurora Serverless v2 + pgvector | PostgreSQL + HNSW vector search, 2 ACU |
 | **RAG API** | Lambda + API Gateway | Embed query → Vector search → LLM generate |
-| **LLM** | Groq (Qwen3-8B) + Gemini 2.0 Flash | External API, no local hosting |
+| **LLM** | Amazon Bedrock | Aws Native model |
 | **Frontend** | Next.js + FastAPI | Dashboard, Search, Chat, Explorer, Monitor |
 
 ## Learning Objectives
@@ -113,18 +113,6 @@ AWS-Projects/
 ├── requirements.txt              # Python Dependencies
 └── README.md                     # Project Documentation
 ```
-
-## Architecture Comparison: v1 vs v2
-
-| Component | v1 (Thesis) | v2 (Workshop) | Reason |
-|-----------|-------------|---------------|--------|
-| **Crawler** | Lambda + Scrapy (15 min timeout) | **Fargate + SitemapSpider** | No timeout, crawl historical via sitemap |
-| **Stream** | Kafka on Docker | **SQS Standard (~$0)** | Simpler, serverless, cost-effective |
-| **Embedding** | Local BGE models | **Bedrock Titan Embed v2** | AWS native, serverless, consistent vector space |
-| **Vector DB** | Qdrant Cloud | **Aurora + pgvector** | Unified DB, no external dependency |
-| **Vectorize** | Separate Fargate Task | **Merged into ETL Lambda** | Fewer services, simpler pipeline |
-| **RAG Query Embed** | Local Model (cold start 5-10s) | **Bedrock API** | Consistent embeddings, no cold start |
-| **Monthly Cost** | ~$35 | **~$21-26** | ~30% reduction |
 
 > **Key Principle:** ETL and RAG API **must use the same embedding model** (`amazon.titan-embed-text-v2:0`). Different models = different vector spaces = broken search.
 

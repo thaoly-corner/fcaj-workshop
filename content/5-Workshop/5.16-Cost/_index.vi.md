@@ -11,12 +11,13 @@ Phần này trình bày các chiến lược tối ưu chi phí cho hệ thống
 
 | Dịch vụ | Cấu hình | Chi phí ước tính | Tỷ lệ |
 |---------|----------|-----------------:|------:|
-| **Aurora Serverless v2** | PostgreSQL 16, pgvector, 0.5–2 ACUs | ~$44.66 | ~45% |
-| **VPC Endpoints** | Bedrock, ECR, CloudWatch Logs, S3 | ~$28.00 | ~28% |
-| **Amazon Bedrock** | Titan Embed Text v2 và mô hình sinh văn bản | ~$10.00 | ~10% |
-| **Amazon RDS Proxy** | Pool kết nối Aurora PostgreSQL | ~$5.00 | ~5% |
-| **AWS Lambda** | Consumer, ETL và RAG API | ~$3.00 | ~3% |
-| **CloudWatch Logs** | Lưu log trong 7 ngày | ~$5.80 | ~6% |
+| **Aurora Serverless v2** | PostgreSQL 16, pgvector, 0.5–2 ACUs | ~$44.66 | ~31% |
+| **NAT Gateway** | 1 Managed NAT Gateway + Phí xử lý dữ liệu | ~$45.00 | ~31% |
+| **VPC Endpoints** | Bedrock, ECR, CloudWatch Logs, S3 | ~$28.00 | ~20% |
+| **Amazon Bedrock** | Titan Embed Text v2 và mô hình sinh văn bản | ~$10.00 | ~7%|
+| **Amazon RDS Proxy** | Pool kết nối Aurora PostgreSQL | ~$5.00 | ~3%|
+| **AWS Lambda** | Consumer, ETL và RAG API | ~$3.00 | ~2% |
+| **CloudWatch Logs** | Lưu log trong 7 ngày | ~$5.80 | ~4% |
 | **Amazon ECS Fargate** | Chạy Crawler theo lịch | ~$1.11 | ~1% |
 | **Amazon S3** | Terraform State và lưu trữ log | ~$0.80 | ~1% |
 | **Amazon API Gateway** | HTTP API (~120 yêu cầu/ngày) | ~$0.10 | ~0% |

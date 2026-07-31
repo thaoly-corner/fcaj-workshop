@@ -114,32 +114,9 @@ AWS-Projects/
 └── README.md                     # Tài liệu dự án
 ```
 
-## So sánh kiến trúc: v1 vs v2
-
-| Thành phần | v1 (Khóa luận) | v2 (Workshop này) | Lý do |
-|------------|----------------|-------------------|-------|
-| **Crawler** | Lambda + Scrapy (timeout 15 phút) | **Fargate + SitemapSpider** | Không timeout, crawl được bài cũ qua sitemap |
-| **Stream** | Kafka trên Docker | **SQS Standard (~$0)** | Đơn giản hơn, serverless, tiết kiệm chi phí |
-| **Embedding** | Local BGE models | **Bedrock Titan Embed v2** | AWS native, serverless, vector space nhất quán |
-| **Vector DB** | Qdrant Cloud | **Aurora + pgvector** | DB thống nhất, không phụ thuộc bên ngoài |
-| **Vectorize** | Fargate Task riêng biệt | **Gộp vào ETL Lambda** | Ít dịch vụ hơn, pipeline đơn giản hơn |
-| **RAG Query Embed** | Local model (cold start 5-10s) | **Bedrock API** | Embedding nhất quán, không cold start |
-| **Chi phí/tháng** | ~$35 | **~$21-26** | Giảm ~30% |
 
 > **Nguyên tắc quan trọng:** ETL và RAG API **bắt buộc dùng cùng một embedding model** (`amazon.titan-embed-text-v2:0`). Khác model = khác vector space = tìm kiếm hỏng.
 
-## Ước lượng chi phí (Hàng tháng, ap-southeast-2)
-
-| Dịch vụ | Cấu hình | Chi phí ước tính |
-|---------|----------|------------------|
-| Aurora Serverless v2 | 2 ACU (db.t4g.medium) | ~$15-20 |
-| ECS Fargate Crawler | 0.25 vCPU, 0.5 GB, 30 phút/ngày | ~$0.50 |
-| Lambda (Consumer, ETL, RAG) | ~1M invocations, timeout 15 phút | ~$2-3 |
-| SQS Standard | ~30K messages/tháng | ~$0 |
-| API Gateway | ~10K requests/tháng | ~$0.30 |
-| Bedrock Titan Embed | ~500K tokens/tháng | ~$0.50 |
-| CloudWatch Logs | Giữ 7 ngày | ~$1-2 |
-| **Tổng cộng** | | **~$21-26/tháng** |
 
 > Chi phí thay đổi theo region và mức sử dụng. Kiểm tra [AWS Pricing Calculator](https://calculator.aws/) cho mức giá hiện tại.
 

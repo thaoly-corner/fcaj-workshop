@@ -492,15 +492,17 @@ aws logs tail /ecs/newsrag-project --follow
 
 ## Cost Estimation (Monthly, ap-southeast-2)
 
-| Resource | Configuration | Est. Cost |
-|----------|---------------|-----------|
-| Aurora Serverless v2 | 2 ACU avg (db.t4g.medium) | ~$15-20 |
-| ECS Fargate Crawler | 0.25 vCPU, 0.5 GB, 30 min/day | ~$0.50 |
-| ECS Fargate ETL | 0.5 vCPU, 1 GB, 30 min/day | ~$1.00 |
-| ECS Fargate Vectorize | 0.5 vCPU, 1 GB, 30 min/day | ~$1.00 |
-| ECR | 1 repository, ~2 GB storage | ~$0.20 |
-| CloudWatch Logs | 7-day retention, ~1 GB ingest | ~$1.00 |
-| **Total (Infrastructure)** | | **~$19-24/month** |
+| AWS Service | Purpose | Estimated Cost |
+|-------------|---------|---------------:|
+| Amazon ECS Fargate | Run the Scrapy crawler | ~$1.11 |
+| Aurora Serverless v2 | Data Warehouse + pgvector | ~$44.66 |
+| Amazon Bedrock | Embedding & LLM inference | ~$10.00 |
+| AWS Lambda | ETL & RAG API | ~$3.00 |
+| VPC Endpoints + NAT Gateway | Private networking | ~$68.00 |
+| Amazon S3 | Logs and Terraform state | ~$0.80 |
+| Amazon SQS + EventBridge | Queue & Scheduler | ~$0.00 |
+| Amazon CloudWatch | Logging & Monitoring | ~$5.80 |
+| **Total** | | **~$133.37/month** |
 
 > **Note:** Lambda + Bedrock + API Gateway costs (covered in later sections) add ~$2-5/month. **Total ~$21-29/month**.
 
@@ -524,7 +526,7 @@ aws rds describe-db-clusters
 aws events list-rules --name-prefix newsrag
 ```
 
-> ⚠️ **WARNING:** This destroys the Aurora cluster and **all data permanently**. Backup first if needed.
+> **WARNING:** This destroys the Aurora cluster and **all data permanently**. Backup first if needed.
 
 ---
 

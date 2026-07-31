@@ -236,12 +236,17 @@ This workshop uses **ap-southeast-2 (Sydney)** by default. To change:
 
 ## Bedrock Model Access
 
-Enable model access in AWS Console:
-1. Go to **Amazon Bedrock** → **Model access**
-2. Click **Manage model access**
-3. Enable **Amazon Titan Embeddings G1 - Text v2** (`amazon.titan-embed-text-v2:0`)
-4. Wait for status to show "Access granted"
+> **Important AWS Update:** The legacy "Model access" page has been officially retired. AWS now **automatically enables** serverless foundation models across all commercial regions when they are first invoked in your account.
+
+You no longer need to manually activate access for the `amazon.titan-embed-text-v2:0` model used in this workshop. You can start using it instantly. 
+
+**What you need to know:**
+- The model will be enabled account-wide the first time it is invoked via the API.
+- Ensure your IAM user or role has the necessary permissions.
+- *(Note: If you plan to use Anthropic models or models from the AWS Marketplace in the future, additional use-case details or Marketplace permissions may be required for the first invocation).*
 
 ---
 
 **Next:** [Infrastructure as Code (Terraform)](5.3-Infrastructure/)
+
+---

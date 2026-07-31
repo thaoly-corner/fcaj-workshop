@@ -26,6 +26,29 @@ Pipeline bao gồm các giai đoạn chính:
 6. **RAG API** thực hiện tìm kiếm ngữ nghĩa và sinh câu trả lời bằng LLM.
 7. **Frontend Dashboard** cung cấp giao diện tìm kiếm, trò chuyện và giám sát pipeline.
 
+### Luồng thu thập dữ liệu (Data Ingestion Flow)
+
+{{< event-image src="images/5-Workshop/5.1-Workshop-overview/Ingestion.png" alt="Data Ingestion Flow" >}}
+
+Quá trình Ingestion tự động hóa việc thu thập dữ liệu và vector hóa:
+* **Kích hoạt (Trigger):** Amazon EventBridge kích hoạt Amazon ECS Fargate Crawler theo một lịch trình định trước.
+* **Thực thi (Execution):** Crawler tải container image từ Amazon ECR thông qua Interface VPC Endpoint. Sau đó, Crawler truy cập internet qua NAT Gateway để thu thập (scrape) dữ liệu từ các trang báo công khai.
+* **Truyền tin (Messaging):** Dữ liệu bài viết thô được gửi dưới dạng các tin nhắn (messages) đến hàng đợi Amazon SQS thông qua Interface VPC Endpoint.
+* **Xử lý (Processing):** Hàng đợi SQS kích hoạt hàm AWS Lambda (ETL + Embedding).
+* **Tạo vector và Lưu trữ (Embedding & Storage):** Hàm Lambda gửi yêu cầu tạo vector embeddings đến Amazon Bedrock thông qua Interface VPC Endpoint. Các vector kết quả sau đó được lưu trữ vào Amazon Aurora PostgreSQL, sử dụng RDS Proxy để quản lý kết nối an toàn và hiệu quả.
+
+
+### Luồng truy vấn RAG (RAG Query Flow)
+
+{{< event-image src="images/5-Workshop/5.1-Workshop-overview/RAG-Query.png" alt="RAG Query Flow" >}}
+
+Quá trình truy xuất và tạo sinh (RAG) quản lý các tương tác của người dùng và trả lời truy vấn:
+* **Yêu cầu từ người dùng (User Request):** Người dùng gửi truy vấn thông qua giao diện ứng dụng. Yêu cầu này được định tuyến lần lượt qua Amazon Route 53, AWS WAF, Amazon CloudFront, và cuối cùng đến Amazon API Gateway.
+* **Gọi hàm (Invocation):** API Gateway kích hoạt hàm AWS Lambda (RAG API).
+* **Tạo vector truy vấn (Query Embedding):** Hàm Lambda gửi truy vấn của người dùng đến Amazon Bedrock (thông qua PrivateLink) để tạo ra vector truy vấn (query vector).
+* **Tìm kiếm tương đồng (Similarity Search):** Vector truy vấn được sử dụng để tiến hành tìm kiếm tương đồng trong cơ sở dữ liệu Amazon Aurora PostgreSQL (kết nối qua RDS Proxy), nhằm trích xuất *n* đoạn văn bản (chunks) có mức độ liên quan cao nhất.
+* **Sinh câu trả lời (Answer Generation):** Các đoạn văn bản được trích xuất sẽ được xếp hạng lại (reranking) và gửi trở lại Amazon Bedrock cùng với câu hỏi ban đầu để mô hình sinh ra một câu trả lời chính xác, sát với ngữ cảnh.
+* **Phản hồi (Response):** Câu trả lời hoàn chỉnh cùng với các tài liệu nguồn (source documents) tham chiếu được trả về cho người dùng.
 ---
 
 # Mục tiêu học tập
@@ -100,11 +123,11 @@ Các dịch vụ dưới đây được tính theo khu vực **ap-southeast-2 (S
 | Aurora Serverless v2 | Data Warehouse + pgvector | ~$44.66 |
 | Amazon Bedrock | Embedding & LLM | ~$10.00 |
 | AWS Lambda | ETL & RAG API | ~$3.00 |
-| VPC Endpoints | Private networking | ~$28.00 |
+| VPC Endpoints + NAT Gateway | Private networking | ~$68.00 |
 | Amazon S3 | Lưu trữ log và Terraform State | ~$0.80 |
 | Amazon SQS + EventBridge | Queue & Scheduler | ~$0.00 |
 | CloudWatch | Logging & Monitoring | ~$5.80 |
-| **Tổng cộng** | | **~$93.37/tháng** |
+| **Tổng cộng** | | **~$133.37/tháng** |
 
 > **Lưu ý**
 >

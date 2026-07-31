@@ -20,11 +20,35 @@ The pipeline consists of the following stages:
 
 1. **Crawler** collects news articles from public news websites.
 2. **Amazon SQS** receives and distributes incoming messages.
-3. **Lambda Consumer** stores raw data in Amazon Aurora PostgreSQL.
 4. **ETL Lambda** cleans the content, splits it into chunks, and generates embeddings using Amazon Bedrock.
 5. **Aurora PostgreSQL + pgvector** stores both structured data and vector embeddings.
 6. **RAG API** performs semantic retrieval and generates responses using an LLM.
 7. **Frontend Dashboard** provides search, chat, and pipeline monitoring capabilities.
+
+### Data Ingestion Flow
+
+{{< event-image src="images/5-Workshop/5.1-Workshop-overview/Ingestion.png" alt="Data Ingestion Flow" >}}
+
+The ingestion process automates data collection and vectorization:
+*   **Trigger:** Amazon EventBridge triggers the Amazon ECS Fargate Crawler on a predefined schedule.
+*   **Execution:** The Crawler retrieves its container image from Amazon ECR via an Interface VPC Endpoint. It accesses the internet through a NAT Gateway to scrape public news articles.
+*   **Messaging:** Raw article data is sent as messages to an Amazon SQS queue via an Interface VPC Endpoint.
+*   **Processing:** The SQS queue triggers the AWS Lambda (ETL + Embedding) function. 
+*   **Embedding & Storage:** The Lambda function requests vector embeddings from Amazon Bedrock via an Interface VPC Endpoint and stores the resulting vectors in Amazon Aurora PostgreSQL utilizing an RDS Proxy for connection management.
+
+### RAG Query Flow
+
+{{< event-image src="images/5-Workshop/5.1-Workshop-overview/RAG-Query.png" alt="RAG Query Flow" >}}
+
+The retrieval and generation process manages user interactions and answers queries:
+*   **User Request:** A user submits a query through the application interface, which is routed through Amazon Route 53, AWS WAF, Amazon CloudFront, and finally Amazon API Gateway.
+*   **Invocation:** API Gateway invokes the AWS Lambda (RAG API) function.
+*   **Query Embedding:** The Lambda function sends the query to Amazon Bedrock (via PrivateLink) to generate a query vector.
+*   **Similarity Search:** The query vector is used to perform a similarity search against the Amazon Aurora PostgreSQL database (routed through RDS Proxy) to retrieve the top *n* relevant text chunks.
+*   **Answer Generation:** The retrieved chunks are reranked and sent back to Amazon Bedrock alongside the original query to generate a contextually accurate answer.
+*   **Response:** The final answer and associated source documents are returned to the user.
+
+---
 
 ---
 
@@ -100,11 +124,11 @@ The following estimates are based on the **ap-southeast-2 (Sydney)** AWS Region.
 | Aurora Serverless v2 | Data Warehouse + pgvector | ~$44.66 |
 | Amazon Bedrock | Embedding & LLM inference | ~$10.00 |
 | AWS Lambda | ETL & RAG API | ~$3.00 |
-| VPC Endpoints | Private networking | ~$28.00 |
+| VPC Endpoints + NAT Gateway | Private networking | ~$68.00 |
 | Amazon S3 | Logs and Terraform state | ~$0.80 |
 | Amazon SQS + EventBridge | Queue & Scheduler | ~$0.00 |
 | Amazon CloudWatch | Logging & Monitoring | ~$5.80 |
-| **Total** | | **~$93.37/month** |
+| **Total** | | **~$133.37/month** |
 
 > **Note**
 >

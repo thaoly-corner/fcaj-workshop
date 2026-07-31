@@ -11,19 +11,20 @@ This section presents the recommended strategies for optimizing the operational 
 
 | Service | Configuration | Estimated Cost | Percentage |
 |---------|---------------|---------------:|-----------:|
-| **Aurora Serverless v2** | PostgreSQL 16, pgvector, 0.5–2 ACUs | ~$44.66 | ~45% |
-| **VPC Endpoints** | Bedrock, ECR, CloudWatch Logs, Amazon S3 | ~$28.00 | ~28% |
-| **Amazon Bedrock** | Titan Embed Text v2 and foundation models | ~$10.00 | ~10% |
-| **Amazon RDS Proxy** | Connection pooling for Aurora PostgreSQL | ~$5.00 | ~5% |
-| **AWS Lambda** | Consumer, ETL, and RAG API | ~$3.00 | ~3% |
-| **Amazon CloudWatch Logs** | 7-day log retention | ~$5.80 | ~6% |
-| **Amazon ECS Fargate** | Scheduled crawler task | ~$1.11 | ~1% |
-| **Amazon S3** | Terraform state and log storage | ~$0.80 | ~1% |
+| **Aurora Serverless v2** | PostgreSQL 16, pgvector, 0.5–2 ACUs | ~$44.66 | ~31% |
+| **NAT Gateway** | 1 Managed NAT Gateway + Data Processing Fee | ~$45.00 | ~31% |
+| **VPC Endpoints** | Bedrock, ECR, CloudWatch Logs, S3 | ~$28.00 | ~20% |
+| **Amazon Bedrock** | Titan Embed Text v2 and text generation model | ~$10.00 | ~7% |
+| **CloudWatch Logs** | 7-day log retention | ~$5.80 | ~4% |
+| **Amazon RDS Proxy** | Connection pool for Aurora PostgreSQL | ~$5.00 | ~3% |
+| **AWS Lambda** | Consumer, ETL, and RAG API | ~$3.00 | ~2% |
+| **Amazon ECS Fargate** | Scheduled Crawler execution | ~$1.11 | ~1% |
+| **Amazon S3** | Terraform State and log storage | ~$0.80 | ~1% |
+| **Amazon ECR** | Docker Image storage | ~$0.20 | ~0% |
 | **Amazon API Gateway** | HTTP API (~120 requests/day) | ~$0.10 | ~0% |
-| **Amazon ECR** | Docker image storage | ~$0.20 | ~0% |
 | **Amazon SQS** | Standard Queue | ~$0.00 | ~0% |
-| **Amazon EventBridge** | Scheduled workflow | ~$0.00 | ~0% |
-| **Total** | | **~$98.67/month** | **100%** |
+| **Amazon EventBridge** | Scheduler | ~$0.00 | ~0% |
+| **Total** | | **~143.67 USD/month** | **100%** |
 
 > **Workload Assumptions**
 >

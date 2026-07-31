@@ -237,12 +237,16 @@ Workshop này sử dụng **ap-southeast-2 (Sydney)** mặc định. Để thay 
 3. Đảm bảo model Bedrock `amazon.titan-embed-text-v2:0` có sẵn trong region của bạn (kiểm tra [Bedrock regions](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html))
 
 ## Truy cập Model Bedrock
+>**Cập nhật quan trọng từ AWS:** Trang "Model access" (Truy cập model) cũ đã chính thức ngừng hoạt động. Hiện tại, AWS **tự động kích hoạt** các serverless foundation model trên tất cả các khu vực thương mại từ tài khoản.
 
-Bật quyền truy cập model trong AWS Console:
-1. Vào **Amazon Bedrock** → **Model access**
-2. Nhấn **Manage model access**
-3. Bật **Amazon Titan Embeddings G1 - Text v2** (`amazon.titan-embed-text-v2:0`)
-4. Đợi trạng thái hiển thị "Access granted"
+
+Những điều bạn cần biết:
+
+Model sẽ được kích hoạt trên toàn bộ tài khoản ngay lần đầu tiên được gọi thông qua API.
+
+Đảm bảo IAM user hoặc role có các quyền cần thiết.
+
+(Lưu ý: Nếu dự định sử dụng các model của Anthropic hoặc các model từ AWS Marketplace trong tương lai, bạn có thể sẽ cần cung cấp thêm thông tin chi tiết về use-case hoặc quyền Marketplace cho lần gọi đầu tiên).
 
 ---
 
