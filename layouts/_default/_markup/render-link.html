@@ -1,7 +1,15 @@
-{{- $url := urls.Parse .Destination -}}
-{{- if not $url.IsAbs -}}
-  {{- with .Page.GetPage $url.Path -}}
-    {{- $url.Path = .RelPermalink -}}
+{{- $destination := .Destination -}}
+{{- $url := urls.Parse $destination -}}
+{{- if and (not $url.IsAbs) (not (hasPrefix $destination "#")) -}}
+  {{- $targetDir := path.Join (path.Dir .Page.File.Dir) $url.Path -}}
+  {{- $sameParent := eq (lower (path.Dir .Page.File.Dir)) (lower (path.Dir $targetDir)) -}}
+  {{- if and $sameParent .Page.Parent -}}
+    {{- $destination = path.Join .Page.Parent.RelPermalink (lower $url.Path) -}}
+  {{- else -}}
+    {{- $destination = path.Join .Page.RelPermalink (lower $url.Path) -}}
+  {{- end -}}
+  {{- if $url.Fragment -}}
+    {{- $destination = printf "%s#%s" $destination $url.Fragment -}}
   {{- end -}}
 {{- end -}}
-<a href="{{ $url.String | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
+<a href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>
