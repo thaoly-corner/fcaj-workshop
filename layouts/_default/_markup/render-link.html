@@ -1,0 +1,26 @@
+{{- $destination := .Destination -}}
+{{- if and
+  (not (hasPrefix $destination "#"))
+  (not (hasPrefix $destination "http://"))
+  (not (hasPrefix $destination "https://"))
+  (not (hasPrefix $destination "mailto:"))
+  (not (hasPrefix $destination "tel:"))
+  (not (hasPrefix $destination "//"))
+-}}
+  {{- $parts := split $destination "#" -}}
+  {{- $target := trim (index $parts 0) "/" -}}
+  {{- $page := site.GetPage "section" (path.Join .Page.File.Dir $target) -}}
+  {{- if not $page -}}
+    {{- $page = site.GetPage "section" (path.Join (path.Dir .Page.File.Dir) $target) -}}
+  {{- end -}}
+  {{- if not $page -}}
+    {{- $page = site.GetPage "section" $target -}}
+  {{- end -}}
+  {{- with $page -}}
+    {{- $destination = .RelPermalink -}}
+    {{- if gt (len $parts) 1 -}}
+      {{- $destination = printf "%s#%s" $destination (index $parts 1) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text }}</a>

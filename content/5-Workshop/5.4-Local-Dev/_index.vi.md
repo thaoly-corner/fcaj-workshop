@@ -419,7 +419,7 @@ docker volume ls | grep newsrag
 
 Sau khi phát triển cục bộ hoạt động:
 1. **Build Docker image** cho AWS: [AWS Deployment Prep](5.9-AWS-Deploy/)
-2. **Deploy lên AWS** — [Fargate Crawler](5.10-Fargate-Crawler/), [Lambda Consumer](5.11-Lambda-Consumer/), [Lambda ETL](5.12-Lambda-ETL/)
+2. **Deploy lên AWS** — [Fargate Crawler](5.10-Fargate/), [Lambda Consumer](5.11-Lambda-Consumer/), [Lambda ETL](5.12-Lambda-ETL/)
 3. **Test RAG API** — [RAG API](5.13-RAG-API/)
 
 ---

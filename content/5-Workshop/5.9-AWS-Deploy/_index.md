@@ -408,11 +408,11 @@ docker rmi $(docker images -q -f dangling=true) 2>/dev/null
 1. **Deploy Infrastructure**: `terraform apply` (see [Infrastructure](5.3-Infrastructure/))
 2. **Build & Push Docker**: This section
 3. **Deploy Lambdas**: Run `deploy.sh` or use CI/CD
-4. **Test Fargate Crawler**: [Fargate Crawler](5.10-Fargate-Crawler/)
+4. **Test Fargate Crawler**: [Fargate Crawler](5.10-Fargate/)
 5. **Test Lambda Consumer**: [Lambda Consumer](5.11-Lambda-Consumer/)
 6. **Test Lambda ETL + Embedding**: [Lambda ETL](5.12-Lambda-ETL/)
 7. **Test RAG API**: [RAG API](5.13-RAG-API/)
 
 ---
 
-**Next:** [Fargate Crawler](5.10-Fargate-Crawler/)
+**Next:** [Fargate Crawler](5.10-Fargate/)

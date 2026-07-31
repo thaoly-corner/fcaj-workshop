@@ -537,7 +537,7 @@ docker ps | grep news-crawler
 
 Sau khi crawler hoạt động cục bộ:
 1. **Build & Push lên ECR** — Xem [AWS Deployment Prep](5.9-AWS-Deploy/)
-2. **Đăng ký Task Definition** — Xem [Fargate Crawler](5.10-Fargate-Crawler/)
+2. **Đăng ký Task Definition** — Xem [Fargate Crawler](5.10-Fargate/)
 3. **Cấu hình SQS** — Thay Kafka bằng SQS cho AWS deployment (xem [Lambda Consumer](5.11-Lambda-Consumer/))
 
 ---

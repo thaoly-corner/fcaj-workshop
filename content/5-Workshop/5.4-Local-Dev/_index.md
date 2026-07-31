@@ -431,7 +431,7 @@ docker volume ls | grep newsrag
 
 After local development works:
 1. **Build & Push Docker Image** — See [AWS Deployment Prep](5.9-AWS-Deploy/)
-2. **Deploy to AWS** — [Fargate Crawler](5.10-Fargate-Crawler/), [Lambda Consumer](5.11-Lambda-Consumer/), [Lambda ETL](5.12-Lambda-ETL/)
+2. **Deploy to AWS** — [Fargate Crawler](5.10-Fargate/), [Lambda Consumer](5.11-Lambda-Consumer/), [Lambda ETL](5.12-Lambda-ETL/)
 3. **Test RAG API** — [RAG API](5.13-RAG-API/)
 
 ---

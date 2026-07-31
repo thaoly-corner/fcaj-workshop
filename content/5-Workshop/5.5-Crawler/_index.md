@@ -537,7 +537,7 @@ docker ps | grep news-crawler
 
 After crawler works locally:
 1. **Build & Push to ECR** — See [AWS Deployment Prep](5.9-AWS-Deploy/)
-2. **Register Task Definition** — See [Fargate Crawler](5.10-Fargate-Crawler/)
+2. **Register Task Definition** — See [Fargate Crawler](5.10-Fargate/)
 3. **Configure SQS** — Replace Kafka with SQS for AWS deployment (see [Lambda Consumer](5.11-Lambda-Consumer/))
 
 ---

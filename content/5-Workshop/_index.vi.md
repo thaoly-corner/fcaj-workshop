@@ -69,7 +69,7 @@ Sau khi hoàn thành workshop này, bạn sẽ có thể:
 
 ### Giai đoạn 3: Triển khai AWS
 9. [Chuẩn bị triển khai AWS](5.9-AWS-Deploy/) - Docker build, ECR push, ECS Task Definitions
-10. [Fargate Crawler](5.10-Fargate-Crawler/) - EventBridge → ECS RunTask → SQS
+10. [Fargate Crawler](5.10-Fargate/) - EventBridge → ECS RunTask → SQS
 11. [Lambda Consumer](5.11-Lambda-Consumer/) - SQS Trigger → SHA256 Dedup → Aurora Insert
 12. [Lambda ETL + Embedding](5.12-Lambda-ETL/) - Clean → Chunk → Bedrock Titan Embed → pgvector
 
